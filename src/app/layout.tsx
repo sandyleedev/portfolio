@@ -3,7 +3,7 @@ import { Header } from '@/components/Header'
 import { cn } from '@/lib/utils'
 
 export const metadata = {
-  title: "Portfolio",
+  title: 'Portfolio',
   description: 'Developer Portfolio',
 }
 
