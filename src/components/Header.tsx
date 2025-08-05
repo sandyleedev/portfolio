@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { DialogTitle } from '@radix-ui/react-dialog'
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import React from 'react'
+import { usePathname } from 'next/navigation'
 
 const navItems = [
   { label: 'Home', href: '/', icon: '/icons/home.png' },
@@ -18,6 +19,9 @@ const navItems = [
 ]
 
 export function Header() {
+  // const pathname = usePathname()
+  // if (pathname === '/') return null
+
   return (
     <header className="py-12 relative flex justify-end items-center max-w-6xl mx-auto w-full">
       {/* Desktop */}
