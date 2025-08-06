@@ -2,5 +2,15 @@
   "HomePage": {
     "title": "안뇽",
     "about": "about 페이지로 갑니당"
+  },
+  "projects": {
+    "crewcall": {
+      "title": "통신사 그룹콜 서비스",
+      "desc": "통신사 기본 앱 서비스의 웹뷰 프론트/백엔드 개발"
+    },
+    "wishlist": {
+      "title": "Wishlist App",
+      "desc": "크리스마스 시즌 위시리스트 반응형 웹"
+    }
   }
 }

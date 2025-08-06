@@ -2,5 +2,15 @@
   "HomePage": {
     "title": "Hello world!",
     "about": "Go to the about page"
+  },
+  "projects": {
+    "crewcall": {
+      "title": "Telecom Web App",
+      "desc": "A responsive web app for telecom services"
+    },
+    "wishlist": {
+      "title": "Wishlist App",
+      "desc": "A clean wishlist app with Christmas theme"
+    }
   }
 }
