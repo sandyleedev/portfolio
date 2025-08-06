@@ -1,4 +1,3 @@
-// components/Header.tsx
 'use client'
 
 import Image from 'next/image'
@@ -8,7 +7,8 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { DialogTitle } from '@radix-ui/react-dialog'
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import React from 'react'
-import { usePathname } from 'next/navigation'
+import LanguageSwitcher from '@/components/common/LanguageSwitcher'
+import LanguageToggle from '@/components/common/LanguageToggle'
 
 const navItems = [
   { label: 'Home', href: '/', icon: '/icons/home.png' },
@@ -19,9 +19,6 @@ const navItems = [
 ]
 
 export function Header() {
-  // const pathname = usePathname()
-  // if (pathname === '/') return null
-
   return (
     <header className="py-12 relative flex justify-end items-center max-w-6xl mx-auto w-full">
       {/* Desktop */}
@@ -38,6 +35,9 @@ export function Header() {
           </Link>
         ))}
       </div>
+      <div className={'absolute top-12 right-2 hidden md:flex'}>
+        <LanguageSwitcher />
+      </div>
 
       {/* Mobile Hamburger */}
       <div className="md:hidden">
@@ -51,6 +51,7 @@ export function Header() {
             <DialogTitle>
               <VisuallyHidden>Navigation Menu</VisuallyHidden>
             </DialogTitle>
+
             <nav className="mt-8 flex flex-col gap-4">
               {navItems.map(({ label, href, icon }) => (
                 <Link
@@ -63,6 +64,9 @@ export function Header() {
                 </Link>
               ))}
             </nav>
+            <div className="absolute bottom-5 right-5">
+              <LanguageToggle />
+            </div>
           </SheetContent>
         </Sheet>
       </div>

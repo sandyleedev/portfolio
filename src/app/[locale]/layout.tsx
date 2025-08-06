@@ -26,10 +26,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={cn('min-h-screen bg-background font-sans antialiased')}>
-        <Header />
-        <main className="max-w-5xl mx-auto px-4 py-8">
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        </main>
+        <NextIntlClientProvider>
+          <Header />
+          <main className="max-w-5xl mx-auto px-4 py-8">{children}</main>
+        </NextIntlClientProvider>
       </body>
     </html>
   )

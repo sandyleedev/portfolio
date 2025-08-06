@@ -1,4 +1,8 @@
 {
+  "LanguageSwitcher": {
+    "label": "언어 변경",
+    "locale": "{locale, select, ko {🇰🇷 한국어} en {🇬🇧 English} other {Unknown}}"
+  },
   "HomePage": {
     "title": "안뇽",
     "about": "about 페이지로 갑니당"
