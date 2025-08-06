@@ -19,22 +19,24 @@ export function ProjectCard({ slug, image, tags }: ProjectCardProps) {
         <div className="relative w-full h-40 mb-6">
           <Image src={image} alt={t(`${slug}.title`)} fill className="object-contain" />
         </div>
-        <CardHeader>
+        <CardHeader className="gap-0">
           <CardTitle className="text-lg px-1">{t(`${slug}.title`)}</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-sm text-muted-foreground mb-2 p-1">{t(`${slug}.desc`)}</p>
+          <p className="text-sm text-muted-foreground mb-3.5 p-1 line-clamp-3 h-[4.5em] overflow-hidden">
+            {t(`${slug}.desc`)}
+          </p>
           <div className="flex flex-wrap gap-2 mb-4">
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-1 text-xs rounded-full bg-muted text-muted-foreground"
+                className="px-2 py-1 text-xs rounded-full bg-muted text-muted-foreground "
               >
                 {tag}
               </span>
             ))}
           </div>
-          <Button asChild size="sm" className={'rounded-full px-4 bg-pink-500'}>
+          <Button asChild size="sm" className={'rounded-full px-4 bg-pink-500 hover:bg-pink-500'}>
             <span>Industrial</span>
           </Button>
         </CardContent>
