@@ -33,10 +33,8 @@ export function ProjectCard({ id, title, description, image, tags }: ProjectCard
               </span>
             ))}
           </div>
-          <Button asChild size="sm" className={'rounded-full px-4'}>
-            <a href={`/projects/${id}`} target="_blank" rel="noopener noreferrer">
-              View Project
-            </a>
+          <Button asChild size="sm" className={'rounded-full px-4 bg-pink-500'}>
+            <span>Industrial</span>
           </Button>
         </CardContent>
       </Card>
