@@ -18,7 +18,7 @@ export default function ProjectDetail() {
   }
 
   return (
-    <div className="px-6 py-10 max-w-4xl mx-auto">
+    <div className="px-6 py-12 max-w-6xl mx-auto">
       <Link href="/projects" className="text-3xl mb-4 inline-block">
         ◀️ Back to Projects
       </Link>
