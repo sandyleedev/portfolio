@@ -1,4 +1,4 @@
-import { ProjectCard } from '@/components/projects/ProjectCard'
+import { ProjectCard } from '@/components/features/projects/ProjectCard'
 import { projectData } from '@/data/projects'
 
 export default function ProjectsPage() {
