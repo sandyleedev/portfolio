@@ -5,6 +5,11 @@ import { useTranslations } from 'next-intl'
 import { projectData } from '@/data/projects'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import ProjectTypeTag from '@/components/features/projects/ProjectTypeTag'
+import ButtonText from '@/components/ui/ButtonText'
+import { Menu } from 'lucide-react'
+import React from 'react'
 
 export default function ProjectDetail() {
   const params = useParams()
@@ -12,25 +17,88 @@ export default function ProjectDetail() {
 
   const t = useTranslations('projects')
   const project = projectData.find((p) => p.slug === slug)
+  const features = t.raw(`${slug}.features`) as string[]
+  const role = t.raw(`${slug}.role`) as string[]
 
   if (!project) {
     return <div>Project not found</div>
   }
 
   return (
-    <div className="px-6 py-12 max-w-6xl mx-auto">
-      <Link href="/projects" className="text-3xl mb-4 inline-block">
-        ◀️ Back to Projects
-      </Link>
-      <Image src={project.image} width={100} height={100} alt={slug} className="my-4" />
+    <div className="px-6 py-12 max-w-6xl mx-auto mb-10">
+      <Button asChild variant="outline" className="rounded-full">
+        <Link href="/projects">◀ BACK TO PROJECT LIST</Link>
+      </Button>
+      <Image src={project.imageUrl} width={100} height={100} alt={slug} className="my-6" />
+
+      {/* title */}
       <h1 className="text-4xl font-bold mb-2">{t(`${slug}.title`)}</h1>
-      <p className="text-lg text-gray-700">{t(`${slug}.desc`)}</p>
-      <div className="mt-4 flex gap-2 flex-wrap">
+
+      {/* date range */}
+      <div className="font-bold tracking-tight mt-4">
+        <span>{project.startMonth}</span>
+        {project.endMonth && <span>- {project.endMonth}</span>}
+      </div>
+
+      {/* desc */}
+      <p className="text-lg text-gray-700 mt-4 ">{t(`${slug}.desc`)}</p>
+
+      {/* tag */}
+      <div className="mt-4 flex gap-2 flex-wrap items-center">
+        {/* project type tag */}
+        <ProjectTypeTag type={project.type} />
+
+        {/* tech stack tags */}
         {project.tags.map((tag) => (
           <span key={tag} className="px-2 py-1 bg-gray-200 text-sm rounded">
             {tag}
           </span>
         ))}
+      </div>
+
+      {/* architecture  */}
+      {project.architectureUrl && (
+        <div className="mt-10">
+          <img
+            src={project.architectureUrl}
+            alt={'architecture_diagram'}
+            className="width-[50vw]"
+          />
+        </div>
+      )}
+
+      {/* features */}
+      <div>
+        <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+          Features
+        </ButtonText>
+        <ul className="list-disc list-inside pl-5 space-y-2 p-2">
+          {features.map((f, i) => (
+            <li key={`feature-${i}`}>{f}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* role */}
+      <div>
+        <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+          Role
+        </ButtonText>
+        <ul className="list-disc list-inside pl-5 space-y-2 p-2">
+          {role.map((r, i) => (
+            <li key={`role-${i}`}>{r}</li>
+          ))}
+        </ul>
+      </div>
+
+      {/* footer */}
+      <div className={'flex w-[100%] justify-center mt-20'}>
+        <Button asChild variant="outline" className="rounded-full font-semibold">
+          <Link href="/projects">
+            <Menu className="w-6 h-6" />
+            BACK TO PROJECT LIST
+          </Link>
+        </Button>
       </div>
     </div>
   )

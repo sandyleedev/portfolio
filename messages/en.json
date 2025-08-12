@@ -8,6 +8,24 @@
     "about": "Go to the about page"
   },
   "projects": {
+    "acs": {
+      "title": "Coupang Digital VI System – Apple Care Service (ACS)",
+      "desc": "ACS (Apple Care Service) is a service that allows customers who purchase Apple devices on Coupang to pay for the existing one-time insurance product, Apple Care+, through a monthly subscription plan.\nThis reduces the initial cost burden and aims to attract more customers.\nThe service architecture is designed to be expandable beyond Apple Care+, enabling support for other device warranty and insurance products in the future.",
+      "features": [
+        "Digital product subscription management and term-based subscription tracking",
+        "Registration and modification of payment methods for subscriptions",
+        "Subscription cancellation and withdrawal processes",
+        "Subscription status management via the admin page",
+        "Multi-platform support: PC/Mobile Web, WebView",
+        "Development and operation of API, interface, and batch processes"
+      ],
+      "role": [
+        "Frontend Development: Implemented PC/Mobile Web and WebView UI (Next.js, React)",
+        "BFF Server Maintenance & Testing: Conducted stability testing, bug fixes, issue resolution for external/internal service integrations, and performance monitoring of the existing Kotlin-based API server",
+        "Operations/Deployment: Built monitoring environment (Grafana) and handled incident response",
+        "Performance Optimization: Improved response times through caching and query optimization"
+      ]
+    },
     "crewcall": {
       "title": "Telecom Web App",
       "desc": "A responsive web app for telecom services"
