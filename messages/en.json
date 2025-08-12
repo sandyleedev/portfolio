@@ -24,15 +24,31 @@
         "BFF Server Maintenance & Testing: Conducted stability testing, bug fixes, issue resolution for external/internal service integrations, and performance monitoring of the existing Kotlin-based API server",
         "Operations/Deployment: Built monitoring environment (Grafana) and handled incident response",
         "Performance Optimization: Improved response times through caching and query optimization"
-      ]
+      ],
+      "contributions": []
     },
     "crewcall": {
-      "title": "Telecom Web App",
-      "desc": "A responsive web app for telecom services"
-    },
-    "wishlist": {
-      "title": "Wishlist App",
-      "desc": "A clean wishlist app with Christmas theme A clean wishlist app with Christmas themeA clean wishlist app with Christmas themeA clean wishlist app with Christmas themeA clean wishlist app with Christmas theme"
+      "title": "LG U+ CrewCall (Group Call)",
+      "desc": "A group calling app pre-installed on LG U+ smartphones, supporting up to 10 simultaneous participants and favorite group management for quick calls. In this project, I contributed to WebView backend development (Spring Boot, Java), implementation of authentication, terms agreement, and settings features, as well as CI/CD and deployment automation.",
+      "features": [
+        "Group calls with up to 10 participants",
+        "Favorite group management and quick call initiation",
+        "WebView-based experience within the mobile app",
+        "User experience optimized for quick group calling"
+      ],
+      "role": [
+        "Developed and implemented WebView backend (Spring Boot, Java) and UI",
+        "Operated CI/CD pipelines and managed deployment processes",
+        "Monitored and maintained service operation environments (K8s, Docker)"
+      ],
+      "contributions": [
+        "Developed WebView backend (Spring Boot, Java): Implemented MVC architecture and rendered UI using Thymeleaf templates",
+        "Managed CI/CD pipeline: Configured AWS-based automated build, test, and Docker deployment; monitored deployment status and handled rollback processes",
+        "Implemented SMS authentication: Added phone number verification and authentication code generation/verification in the onboarding flow",
+        "Terms & Policy Management: Delivered terms content dynamically via S3–CloudFront, implemented user consent validation logic, and integrated UI controls",
+        "Logging & Analytics Instrumentation: Integrated with LG U+ internal logging system, collected and analyzed app entry, active user counts, and group call usage statistics",
+        "K8s & Docker Operations: Managed container configurations, monitored runtime status, and responded to incidents"
+      ]
     }
   }
 }

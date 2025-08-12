@@ -10,6 +10,9 @@ import ProjectTypeTag from '@/components/features/projects/ProjectTypeTag'
 import ButtonText from '@/components/ui/ButtonText'
 import { Menu } from 'lucide-react'
 import React from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination } from 'swiper/modules'
+import ProjectMediaCarousel from '@/components/features/projects/ProjectMediaCarousel'
 
 export default function ProjectDetail() {
   const params = useParams()
@@ -19,6 +22,7 @@ export default function ProjectDetail() {
   const project = projectData.find((p) => p.slug === slug)
   const features = t.raw(`${slug}.features`) as string[]
   const role = t.raw(`${slug}.role`) as string[]
+  const contributions = (t.raw(`${slug}.contributions`) as string[]) ?? null
 
   if (!project) {
     return <div>Project not found</div>
@@ -49,20 +53,30 @@ export default function ProjectDetail() {
         <ProjectTypeTag type={project.type} />
 
         {/* tech stack tags */}
-        {project.tags.map((tag) => (
-          <span key={tag} className="px-2 py-1 bg-gray-200 text-sm rounded">
-            {tag}
+        {project.stacks.map((stack) => (
+          <span key={stack} className="px-2 py-1 bg-gray-200 text-sm rounded">
+            {stack}
           </span>
         ))}
       </div>
 
+      {/*  media carousel */}
+      {project.mediaUrl?.length ? (
+        <div className="mt-15">
+          <ProjectMediaCarousel title={t(`${slug}.title`)} images={project.mediaUrl} />
+        </div>
+      ) : null}
+
       {/* architecture  */}
       {project.architectureUrl && (
-        <div className="mt-10">
+        <div>
+          <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+            System Architecture
+          </ButtonText>
           <img
             src={project.architectureUrl}
             alt={'architecture_diagram'}
-            className="width-[50vw]"
+            className="width-[50vw] mt-2 border"
           />
         </div>
       )}
@@ -90,6 +104,22 @@ export default function ProjectDetail() {
           ))}
         </ul>
       </div>
+
+      {/* contributions */}
+      {contributions && contributions.length > 0 && (
+        <div>
+          <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+            Contributions
+          </ButtonText>
+          <ul className="list-disc list-inside pl-5 space-y-2 p-2">
+            {contributions.map((c, i) => (
+              <li key={`contribution-${i}`} className="whitespace-pre-line">
+                {c}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
 
       {/* footer */}
       <div className={'flex w-[100%] justify-center mt-20'}>

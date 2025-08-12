@@ -33,6 +33,7 @@ export interface ProjectDataType {
   endMonth?: string
   imageUrl: string
   tags: string[]
+  stacks: string[]
   architectureUrl?: string
   apiDocsUrl?: string
   mediaUrl?: string[]
@@ -48,6 +49,26 @@ export const projectData: ProjectDataType[] = [
     endMonth: '2024.12',
     imageUrl: '/icons/apple.png',
     tags: ['React', 'Typescript', 'Kotlin'],
-    architectureUrl: '/images/projects/acs/acs_architecture.png'
+    stacks: ['React', 'Typescript', 'Kotlin', 'Jest', 'JUnit', 'Grafana'],
+    architectureUrl: '/images/projects/acs/acs_architecture.png',
+  },
+  {
+    slug: 'crewcall',
+    type: ProjectType.Industrial,
+    startMonth: '2024.06',
+    endMonth: '2024.08',
+    imageUrl: '/icons/letter.png',
+    tags: ['Spring boot', 'AWS', 'Docker', 'K8S'],
+    stacks: ['Spring boot', 'Java', 'AWS', 'Docker', 'K8S', 'Github Actions', 'Thymeleaf'],
+    mediaUrl: [
+      '/images/projects/crewcall/crewcall_media7.png',
+      '/images/projects/crewcall/crewcall_media8.png',
+      '/images/projects/crewcall/crewcall_media1.png',
+      '/images/projects/crewcall/crewcall_media2.png',
+      '/images/projects/crewcall/crewcall_media3.png',
+      '/images/projects/crewcall/crewcall_media4.png',
+      '/images/projects/crewcall/crewcall_media5.png',
+      '/images/projects/crewcall/crewcall_media6.png',
+    ],
   },
 ]
