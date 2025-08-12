@@ -49,7 +49,7 @@ export const projectData: ProjectDataType[] = [
     endMonth: '2024.12',
     imageUrl: '/icons/apple.png',
     tags: ['React', 'Typescript', 'Kotlin'],
-    stacks: ['React', 'Typescript', 'Kotlin', 'Jest', 'JUnit', 'Grafana'],
+    stacks: ['React', 'Typescript', 'Kotlin', 'JPA', 'Jest', 'JUnit', 'Grafana'],
     architectureUrl: '/images/projects/acs/acs_architecture.png',
   },
   {
@@ -59,7 +59,7 @@ export const projectData: ProjectDataType[] = [
     endMonth: '2024.08',
     imageUrl: '/icons/letter.png',
     tags: ['Spring boot', 'AWS', 'Docker', 'K8S'],
-    stacks: ['Spring boot', 'Java', 'AWS', 'Docker', 'K8S', 'Github Actions', 'Thymeleaf'],
+    stacks: ['Spring boot', 'Java', 'AWS', 'Docker', 'K8S', 'Github Actions', 'Thymeleaf', 'MySQL'],
     mediaUrl: [
       '/images/projects/crewcall/crewcall_media7.png',
       '/images/projects/crewcall/crewcall_media8.png',
@@ -70,5 +70,6 @@ export const projectData: ProjectDataType[] = [
       '/images/projects/crewcall/crewcall_media5.png',
       '/images/projects/crewcall/crewcall_media6.png',
     ],
+    architectureUrl: '/images/projects/crewcall/crewcall_architecture.png',
   },
 ]
