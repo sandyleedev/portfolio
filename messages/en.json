@@ -7,6 +7,9 @@
     "title": "Hello world!",
     "about": "Go to the about page"
   },
+  "AboutPage": {
+    "intro": "I am a full-stack developer with two years of experience, primarily focused on front-end development using React and TypeScript. On the back end, I have worked with Java Spring Boot to design APIs and integrate databases, building stable and scalable services. I also have hands-on experience in cloud and automation, having designed CI/CD pipelines and set up deployment environments using AWS services and Docker."
+  },
   "projects": {
     "acs": {
       "title": "Coupang Digital VI System – Apple Care Service (ACS)",
