@@ -4,7 +4,26 @@
     "about": "about 페이지로 갑니당"
   },
   "about": {
-    "intro": "3년 차 풀스택 개발자로, React와 TypeScript 기반의 프론트엔드 개발을 주로 담당해왔습니다. 백엔드에서는 Java Spring Boot를 활용해 API 설계와 데이터베이스 연동을 수행하며, 안정적이고 확장 가능한 서비스를 구축했습니다. 또한 프로젝트에서 CI/CD 파이프라인을 설계하고 AWS 서비스와 Docker를 활용해 배포 환경을 구성하는 등, 클라우드와 자동화 분야에서도 실무 경험을 보유하고 있습니다."
+    "intro": "3년 차 풀스택 개발자로, React와 TypeScript 기반의 프론트엔드 개발을 주로 담당해왔습니다. 백엔드에서는 Java Spring Boot를 활용해 API 설계와 데이터베이스 연동을 수행하며, 안정적이고 확장 가능한 서비스를 구축했습니다. 또한 프로젝트에서 CI/CD 파이프라인을 설계하고 AWS 서비스와 Docker를 활용해 배포 환경을 구성하는 등, 클라우드와 자동화 분야에서도 실무 경험을 보유하고 있습니다.",
+    "experience": {
+      "ponylink": {
+        "title": "Full Stack Developer @ Ponylink",
+        "subtitle": "2023.10 - 2025.08",
+        "desc": "Frontend: React, Next.js, TypeScript로 반응형 웹 개발 (성능·유지보수성 중점)\nBackend: Kotlin(Spring Boot), Java 기반 API 및 마이크로서비스 개발\nCloud & DevOps: AWS(EC2, EKS, S3), Docker, Jenkins 기반 배포·자동화"
+      }
+    },
+    "education": {
+      "uob": {
+        "title": "University of Birmingham",
+        "major": "Msc Computer Science",
+        "date": "2025.09 -"
+      },
+      "snue": {
+        "title": "서울교육대학교",
+        "major": "교육학 석사 - 초등교육 수학심화전공",
+        "date": "2018.03 - 2022.02"
+      }
+    }
   },
   "language": {
     "label": "언어 변경",

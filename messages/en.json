@@ -4,7 +4,26 @@
     "about": "Go to the about page"
   },
   "about": {
-    "intro": "I am a full-stack developer with two years of experience, primarily focused on front-end development using React and TypeScript. On the back end, I have worked with Java Spring Boot to design APIs and integrate databases, building stable and scalable services. I also have hands-on experience in cloud and automation, having designed CI/CD pipelines and set up deployment environments using AWS services and Docker."
+    "intro": "I am a full-stack developer with two years of experience, primarily focused on front-end development using React and TypeScript. On the back end, I have worked with Java Spring Boot to design APIs and integrate databases, building stable and scalable services. I also have hands-on experience in cloud and automation, having designed CI/CD pipelines and set up deployment environments using AWS services and Docker.",
+    "experience": {
+      "ponylink": {
+        "title": "Full Stack Developer @ Ponylink",
+        "subtitle": "Onsite | October 2023 - August 2025",
+        "desc": " • Frontend: Built responsive web applications using React, Next.js, and TypeScript, focusing on usability, performance, and maintainable code.\n• Backend: Developed and maintained backend services with Kotlin (Spring Boot) and Java, including API integrations, microservices, and CI/CD pipelines.\n• Cloud & DevOps: Managed deployments and infrastructure on AWS (EC2, EKS, S3) and implemented automated pipelines using Jenkins.\n                  • Prototyping & Internal Projects: Led and contributed to prototypes, including a real-time vehicle maintenance service (WebRTC/AWS Chime) and a microservices demo (RabbitMQ, Spring Gateway)."
+      }
+    },
+    "education": {
+      "uob": {
+        "title": "University of Birmingham",
+        "major": "Msc Computer Science",
+        "date": "2025.09 -"
+      },
+      "snue": {
+        "title": "Seoul National University of Education",
+        "major": "Bachelor of Education - BEd, Elementary Education (Mathematics)",
+        "date": "2018.03 - 2022.02"
+      }
+    }
   },
   "language": {
     "label": "Change language",
