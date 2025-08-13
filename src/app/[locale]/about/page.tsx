@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 export default function About() {
-  const t = useTranslations('AboutPage')
+  const t = useTranslations('about')
   return (
     <>
       <div className="px-6 py-12 max-w-6xl mx-auto">

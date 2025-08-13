@@ -16,7 +16,7 @@ import { useTransition } from 'react'
 import clsx from 'clsx'
 
 export default function LanguageSwitcher() {
-  const t = useTranslations('LanguageSwitcher')
+  const t = useTranslations('language')
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
