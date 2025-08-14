@@ -1,6 +1,6 @@
 import { IconProps } from '@/types/IconProps'
 
-export default function IntellijIcon({ size = 100 }: IconProps) {
+export default function IntellijIcon({ size = "100%" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 128 128">
       <defs>

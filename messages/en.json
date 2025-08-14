@@ -16,12 +16,18 @@
       "uob": {
         "title": "University of Birmingham",
         "major": "Msc Computer Science",
-        "date": "2025.09 -"
+        "date": "Sep 2025 -"
       },
       "snue": {
         "title": "Seoul National University of Education",
         "major": "Bachelor of Education - BEd, Elementary Education (Mathematics)",
-        "date": "2018.03 - 2022.02"
+        "date": "March 2018 - February 2022"
+      }
+    },
+    "certificate": {
+      "aws": {
+        "title": "AWS Solution Architect Associate",
+        "institute": "Amazon Web Service"
       }
     }
   },

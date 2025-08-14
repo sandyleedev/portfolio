@@ -23,6 +23,12 @@
         "major": "교육학 학사 - 초등교육 수학심화전공",
         "date": "2018.03 - 2022.02"
       }
+    },
+    "certificate": {
+      "aws": {
+        "title": "AWS Solution Architect Associate",
+        "institute": "Amazon Web Service"
+      }
     }
   },
   "language": {

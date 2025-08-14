@@ -1,6 +1,6 @@
 import { IconProps } from '@/types/IconProps'
 
-export default function JavascriptIcon({ size = 100 }: IconProps) {
+export default function JavascriptIcon({ size = "100%" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 128 128">
       <path fill="#F0DB4F" d="M1.408 1.408h125.184v125.185H1.408z"></path>

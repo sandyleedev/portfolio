@@ -1,6 +1,6 @@
 import { IconProps } from '@/types/IconProps'
 
-export default function TypescriptIcon({ size = 100 }: IconProps) {
+export default function TypescriptIcon({ size = "100%" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 128 128">
       <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path>

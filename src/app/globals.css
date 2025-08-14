@@ -123,6 +123,23 @@
   }
 }
 
+body {
+  cursor: url('/icons/coconut-tree-cursor.png') 40 40, auto;
+}
+
+a,
+button,
+[role='button'],
+.cursor-pointer {
+  cursor: url('/icons/folders-cursor.png') 40 40, pointer;
+}
+
+/* drag effect */
+::selection {
+  color: white;
+  background-color: #03b82e;
+}
+
 /* swiper bullet default style */
 .swiper-pagination-bullet {
   width: 10px;

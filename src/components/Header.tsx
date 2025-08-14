@@ -9,6 +9,7 @@ import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import React from 'react'
 import LanguageSwitcher from '@/components/common/LanguageSwitcher'
 import LanguageToggle from '@/components/common/LanguageToggle'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 const navItems = [
   { label: 'Home', href: '/', icon: '/icons/home.png' },
@@ -20,22 +21,35 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="py-12 relative flex justify-end items-center max-w-6xl mx-auto w-full">
-      {/* Desktop */}
-      <div className="absolute top-8 left-1/2 transform -translate-x-1/2 hidden md:flex gap-4">
+    <header>
+      {/* Vertical Menu */}
+      <div className="fixed bottom-1/2 translate-y-50 left-10 flex flex-col gap-4">
         {navItems.map(({ label, href, icon }) => (
-          <Link
-            key={href}
-            href={href}
-            aria-label={label}
-            title={label}
-            className="rounded-xl p-2 hover:bg-muted transition transform hover:scale-105"
-          >
-            <Image src={icon} alt={label} width={64} height={64} />
-          </Link>
+          <TooltipProvider key={label}>
+            <Tooltip>
+              <Link
+                key={href}
+                href={href}
+                aria-label={label}
+                title={label}
+                className="rounded-xl p-2 transition transform hover:scale-110"
+              >
+                <TooltipTrigger asChild>
+                  <Image src={icon} alt={label} width={64} height={64} />
+                </TooltipTrigger>
+              </Link>
+
+              <TooltipContent
+                className="bg-zinc-50 fill-zinc-50 text-black border ml-3"
+                side="right"
+              >
+                {label}
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         ))}
       </div>
-      <div className={'absolute top-12 right-2 hidden md:flex'}>
+      <div className={'w-screen flex justify-end hidden md:flex px-4 pt-4'}>
         <LanguageSwitcher />
       </div>
 
@@ -44,23 +58,23 @@ export function Header() {
         <Sheet>
           <SheetTrigger asChild>
             <button>
-              <Menu className="w-6 h-6 absolute top-4 right-4" />
+              <Menu className="w-6 h-6 absolute top-4 right-4 cursor-pointer" />
             </button>
           </SheetTrigger>
-          <SheetContent side="right">
+          <SheetContent side="right" className="w-screen">
             <DialogTitle>
               <VisuallyHidden>Navigation Menu</VisuallyHidden>
             </DialogTitle>
 
-            <nav className="mt-8 flex flex-col gap-4">
+            <nav className="mt-8 flex flex-col gap-10">
               {navItems.map(({ label, href, icon }) => (
                 <Link
                   key={href}
                   href={href}
-                  className="flex items-center justify-center gap-4 h-[8vh]"
+                  className="flex items-center justify-center gap-10 h-[8vh]"
                 >
-                  <Image src={icon} alt={label} width={36} height={36} />
-                  <div className="pr-2">{label}</div>
+                  <Image src={icon} alt={label} width={50} height={50} />
+                  <div className="pr-2 text-5xl">{label}</div>
                 </Link>
               ))}
             </nav>

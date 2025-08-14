@@ -23,9 +23,8 @@ export default function LanguageToggle() {
 
   const toggleLocale = (next: boolean) => {
     const nextLocale = next ? 'ko' : 'en'
-    setChecked(next) // ✅ 먼저 토글 상태만 바꿔서 애니메이션 유도
+    setChecked(next)
 
-    // ✅ 애니메이션 시간만큼 딜레이 (예: 300ms)
     setTimeout(() => {
       startTransition(() => {
         router.replace(
@@ -39,9 +38,9 @@ export default function LanguageToggle() {
 
   return (
     <div className="flex items-center gap-3 text-sm font-medium text-muted-foreground">
-      <span className="text-xl">🇬🇧</span>
+      <span className="text-lg">ENG</span>
       <IosToggle checked={checked} onChange={toggleLocale} />
-      <span className="text-xl">🇰🇷</span>
+      <span className="text-lg">KOR</span>
     </div>
   )
 }

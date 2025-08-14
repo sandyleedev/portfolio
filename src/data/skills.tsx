@@ -31,7 +31,7 @@ import SwaggerIcon from '@/components/icons/SwaggerIcon'
 import TailwindIcon from '@/components/icons/TailwindIcon'
 
 export const frontendSkills = [
-  { icon: <ReactIcon />, name: 'React' },
+  { icon: <ReactIcon/>, name: 'React' },
   { icon: <JavascriptIcon />, name: 'JavaScript' },
   { icon: <TypescriptIcon />, name: 'TypeScript' },
   { icon: <NextjsIcon />, name: 'Next.js' },

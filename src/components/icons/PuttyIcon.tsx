@@ -1,6 +1,6 @@
 import { IconProps } from '@/types/IconProps'
 
-export default function PuttyIcon({ size = 100 }: IconProps) {
+export default function PuttyIcon({ size = "100%" }: IconProps) {
   return (
     <svg width={size} height={size} viewBox="0 0 128 128">
       <path d="M69.531 19.84h31.281v20.25H69.531zm0 0" fill="#0403ff"></path>
