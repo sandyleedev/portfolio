@@ -23,7 +23,7 @@ export function Header() {
   return (
     <header>
       {/* Vertical Menu */}
-      <div className="fixed bottom-1/2 translate-y-50 left-10 flex flex-col gap-4">
+      <div className="fixed bottom-1/2 translate-y-50 left-10 flex-col gap-4 hidden lg:flex">
         {navItems.map(({ label, href, icon }) => (
           <TooltipProvider key={label}>
             <Tooltip>
@@ -49,12 +49,12 @@ export function Header() {
           </TooltipProvider>
         ))}
       </div>
-      <div className={'w-screen flex justify-end hidden md:flex px-4 pt-4'}>
+      <div className={'w-screen flex justify-end hidden lg:flex px-4 pt-4'}>
         <LanguageSwitcher />
       </div>
 
       {/* Mobile Hamburger */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
         <Sheet>
           <SheetTrigger asChild>
             <button>

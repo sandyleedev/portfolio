@@ -3,6 +3,10 @@
 import SkillCard from '@/components/features/skills/SkillCard'
 import { frontendSkills, backendSkills, cloudInfraSkills, devopsSkills } from '@/data/skills'
 import Image from 'next/image'
+import FESkillSet from '@/components/features/skills/FESkillSet'
+import BESkillSet from '@/components/features/skills/BESkillSet'
+import CloudSkillSet from '@/components/features/skills/CloudSkillSet'
+import DevopsSkillSet from '@/components/features/skills/DevopsSkillSet'
 
 export default function Skills() {
   return (
@@ -13,41 +17,25 @@ export default function Skills() {
       {/* Frontend */}
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-6">Frontend</h2>
-        <div className="flex flex-wrap gap-2">
-          {frontendSkills.map((skill, idx) => (
-            <SkillCard key={idx} icon={skill.icon} name={skill.name} />
-          ))}
-        </div>
+        <FESkillSet />
       </section>
 
       {/* Backend */}
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-6">Backend</h2>
-        <div className="flex flex-wrap gap-2">
-          {backendSkills.map((skill, idx) => (
-            <SkillCard key={idx} icon={skill.icon} name={skill.name} />
-          ))}
-        </div>
+        <BESkillSet />
       </section>
 
       {/* Cloud & Infrastructure */}
       <section className="mb-12">
         <h2 className="text-2xl font-semibold mb-6">Cloud & Infrastructure</h2>
-        <div className="flex flex-wrap gap-2">
-          {cloudInfraSkills.map((skill, idx) => (
-            <SkillCard key={idx} icon={skill.icon} name={skill.name} />
-          ))}
-        </div>
+        <CloudSkillSet />
       </section>
 
       {/* DevOps Tools */}
       <section>
         <h2 className="text-2xl font-semibold mb-6">Database & DevOps Tools</h2>
-          <div className="flex flex-wrap gap-2">
-              {devopsSkills.map((skill, idx) => (
-                  <SkillCard key={idx} icon={skill.icon} name={skill.name}/>
-              ))}
-          </div>
+        <DevopsSkillSet />
       </section>
     </div>
   )
