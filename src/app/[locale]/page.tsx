@@ -1,30 +1,56 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useEffect, useRef } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import IntroSection from '@/components/features/home/IntroSection'
 
-export default function HomePage() {
-  const t = useTranslations('home')
+export default function HorizontalTrack() {
+  const pinRef = useRef<HTMLDivElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
+    const pinEl = pinRef.current!
+    const trackEl = trackRef.current!
+
+    const setup = () => {
+      const total = trackEl.scrollWidth - window.innerWidth // 트랙 전체 너비 - 뷰포트
+      gsap.to(trackEl, {
+        x: -total,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: pinEl,
+          start: 'top top',
+          end: `+=${total}`,
+          scrub: 1,
+          pin: true,
+          invalidateOnRefresh: true,
+        },
+      })
+    }
+
+    setup()
+    const onResize = () => ScrollTrigger.refresh()
+    window.addEventListener('resize', onResize)
+    return () => {
+      window.removeEventListener('resize', onResize)
+      ScrollTrigger.getAll().forEach((t) => t.kill())
+    }
+  }, [])
 
   return (
-      <>
-          <div className="text-9xl">Jenna Lee, Full Stack Developer</div>
-          <div className="text-9xl">2 years experience</div>
-          <div className="text-9xl">University of Birmingham msc Computer science</div>
-          <div
-              className="bg-blue-500 inline-block px-3 py-2 text-white text-md rounded-full absolute top-150 right-100">
-              React
-          </div>
-          <div
-              className="bg-blue-500 inline-block px-3 py-2 text-white text-md rounded-full absolute top-120 right-60">
-              Typescript
-          </div>
-          <div
-              className="cursor-pointer bg-pink-500 inline-block px-4 py-2 text-white text-md rounded-full absolute top-120 right-60">
-              Check my CV!
-          </div>
-          <div>
-              <img src="/images/common/floorlamp.png" className="fixed bottom-0 -right-5 cursor-pointer transform scale-x-[-1] w-[30vw]"/>
-          </div>
-      </>
+    <main ref={pinRef} className="h-screen overflow-hidden">
+      <div ref={trackRef} className="inline-flex h-screen gap-6">
+        <IntroSection />
+        <div className="flex-none w-[85vw] h-screen bg-rose-600 rounded-2xl grid place-items-center text-white text-3xl">
+          C
+        </div>
+        <div className="flex-none w-[60vw] h-screen bg-emerald-600 rounded-2xl grid place-items-center text-white text-3xl">
+          D
+        </div>
+        <div className="flex-none w-[5px]" />
+      </div>
+    </main>
   )
 }
