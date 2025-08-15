@@ -26,7 +26,7 @@ export function ProjectCard({ slug }: ProjectCardProps) {
         </div>
 
         <CardHeader className="gap-0">
-          <CardTitle className="text-lg px-1 line-clamp-2 overflow-hidden h-[3em]">
+          <CardTitle className="text-[100%] px-1 line-clamp-2 overflow-hidden h-[3em]">
             {t(`${slug}.title`)}
           </CardTitle>
         </CardHeader>

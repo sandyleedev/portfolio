@@ -72,4 +72,14 @@ export const projectData: ProjectDataType[] = [
     ],
     architectureUrl: '/images/projects/crewcall/crewcall_architecture.png',
   },
+  {
+    slug: 'acs',
+    type: ProjectType.Industrial,
+    startMonth: '2024.01',
+    endMonth: '2024.12',
+    imageUrl: '/icons/apple.png',
+    tags: ['React', 'Typescript', 'Kotlin'],
+    stacks: ['React', 'Typescript', 'Kotlin', 'JPA', 'Jest', 'JUnit', 'Grafana'],
+    architectureUrl: '/images/projects/acs/acs_architecture.png',
+  },
 ]

@@ -2,6 +2,41 @@
 @import 'tw-animate-css';
 @import 'swiper/css';
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* tailwind animation */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@utility animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes dropIn {
+  0%   { opacity: 0; transform: translateY(-200px); }
+  60%  { opacity: 1; transform: translateY(30px); }   /* 아래로 살짝 튀기 */
+  80%  { transform: translateY(-10px); }              /* 위로 튕김 */
+  100% { transform: translateY(0); }
+}
+
+@utility animate-dropIn {
+  animation: dropIn 0.8s cubic-bezier(0.25, 1.25, 0.5, 1) both;
+}
+
+@keyframes rotate {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@utility animate-rotate {
+  animation: rotate 8s linear infinite;
+}
+/* end of tailwind animation */
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

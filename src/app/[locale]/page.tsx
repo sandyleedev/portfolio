@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import IntroSection from '@/components/features/home/IntroSection'
+import SkillSection from '@/components/features/home/SkillSection'
 
 export default function HorizontalTrack() {
   const pinRef = useRef<HTMLDivElement>(null)
@@ -43,6 +44,7 @@ export default function HorizontalTrack() {
     <main ref={pinRef} className="h-screen overflow-hidden">
       <div ref={trackRef} className="inline-flex h-screen gap-6">
         <IntroSection />
+        <SkillSection />
         <div className="flex-none w-[85vw] h-screen bg-rose-600 rounded-2xl grid place-items-center text-white text-3xl">
           C
         </div>
