@@ -1,7 +1,5 @@
 'use client'
 
-import SkillCard from '@/components/features/skills/SkillCard'
-import { frontendSkills, backendSkills, cloudInfraSkills, devopsSkills } from '@/data/skills'
 import Image from 'next/image'
 import FESkillSet from '@/components/features/skills/FESkillSet'
 import BESkillSet from '@/components/features/skills/BESkillSet'

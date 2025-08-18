@@ -9,7 +9,7 @@
       "ponylink": {
         "title": "Full Stack Developer @ Ponylink",
         "subtitle": "2023.10 - 2025.08",
-        "desc": "Frontend: React, Next.js, TypeScript로 반응형 웹 개발 (성능·유지보수성 중점)\nBackend: Kotlin(Spring Boot), Java 기반 API 및 마이크로서비스 개발\nCloud & DevOps: AWS(EC2, EKS, S3), Docker, Jenkins 기반 배포·자동화"
+        "desc": " • Frontend: React, Next.js, TypeScript로 반응형 웹 개발 \n(성능·유지보수성 중점)\n • Backend: Kotlin(Spring Boot), Java 기반 API 및 마이크로서비스 개발\n • Cloud & DevOps: AWS(EC2, EKS, S3), Docker, Jenkins 기반 배포·자동화"
       }
     },
     "education": {
@@ -25,9 +25,30 @@
       }
     },
     "certificate": {
+      "summary": "☁️ AWS Solutions Architect – Associate\nValidated ability to design cost-efficient, highly available, and fault-tolerant infrastructures. Strengthened cloud architecture and system design expertise.\n🗄️ SQLD (SQL Developer)\nCertified in database design, normalization, and SQL optimization. Enhanced capability to build reliable, data-driven applications.\n💻 Engineer Information Processing\nA national certification by HRD Korea, covering software engineering, databases, OS, and networks. Provided a strong foundation for systematic software development practices.\n🐧 Linux Master Level 2\nIssued by the KAIT. Learned Linux installation, user/permission management, process control, and shell scripting, building a foundation for server and cloud operations.",
       "aws": {
         "title": "AWS Solution Architect Associate",
-        "institute": "Amazon Web Service"
+        "institute": "Amazon Web Service",
+        "date": "2025.05",
+        "desc": "• 비용 효율적이고 장애 발생 시 위험을 최소화하는 고가용성 인프라 설계 경험\n• 다양한 AWS 서비스를 활용하며 클라우드 아키텍처 전반에 대한 이해 심화\n• AWS Solution Architect – Associate 자격 취득을 통해 클라우드 및 시스템 설계 역량 강화"
+      },
+      "sqld": {
+        "title": "SQLD",
+        "institute": "한국데이터산업진흥원",
+        "date": "2025.04",
+        "desc": "• 한국데이터산업진흥원에서 발급하는 SQL 개발자(SQLD) 자격 취득\n• 데이터베이스 설계, 정규화, SQL 최적화에 대한 전문성 강화\n• 안정적이고 효율적인 데이터 기반 시스템 구축 역량 확보"
+      },
+      "eip": {
+        "title": "정보처리기사",
+        "institute": "한국산업인력공단",
+        "date": "2025.09",
+        "desc": "• 자격 준비 과정을 통해 소프트웨어 공학적 문제 해결 방식을 익히고, 데이터베이스·운영체제·네트워크 등 컴퓨터공학 핵심 개념을 체계적으로 학습.\n• 체계적인 개발 프로세스에 대한 이해를 확보.\n• 대규모 시스템을 안정적으로 설계·운영할 수 있는 기초 역량을 갖추게 되었으며, 개발자로서 전문성을 강화하는 계기가 됨."
+      },
+      "linux": {
+        "title": "리눅스마스터 2급",
+        "institute": "KAIT",
+        "date": "2024.10",
+        "desc": "• 리눅스 운영체제 기초 자격 학습을 통해 리눅스 설치 및 환경 설정, 사용자 및 권한 관리, 프로세스 제어, 기본 쉘 스크립트 작성 등의 핵심 관리 능력을 습득.\n• 이를 기반으로 서버 환경을 안정적이고 효율적으로 운영할 수 있는 기초 역량을 확보하였으며,\n• 백엔드 개발과 클라우드 인프라 관리의 기반 지식을 다지는 계기가 됨."
       }
     }
   },

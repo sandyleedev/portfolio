@@ -27,7 +27,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body className={cn('min-h-screen bg-background font-sans antialiased')}>
         <NextIntlClientProvider>
-          <Header />
+          {/*<Header />*/}
           {/*<main className={"px-4 lg:pl-[150px]"}>{children}</main>*/}
           {children}
           {/*<main className="max-w-5xl mx-auto px-4 py-8">{children}</main>*/}
