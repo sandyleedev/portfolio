@@ -8,6 +8,8 @@ import SkillSection from '@/components/features/home/SkillSection'
 import ContactSection from '@/components/features/home/ContactSection'
 import ProjectSection from '@/components/features/home/ProjectSection'
 import AboutSection from '@/components/features/home/AboutSection'
+import LanguageGlobeButton from '@/components/common/LanguageGlobeButton'
+import LanguageSwitcher from '@/components/common/LanguageSwitcher'
 
 export default function MixedScrollPage() {
   const pinRef1 = useRef<HTMLDivElement>(null) // 가로 섹션 #1 (핀)
@@ -97,42 +99,49 @@ export default function MixedScrollPage() {
   }, [])
 
   return (
-    <div className="min-h-[300vh]">
-      {/* 세로 섹션 A */}
-      {/*<section className="min-h-screen grid place-items-center bg-neutral-50">*/}
-      {/*  <div className="max-w-3xl p-8 text-center">*/}
-      {/*    <h1 className="text-4xl font-bold mb-4">Vertical A</h1>*/}
-      {/*    <p className="text-neutral-600">아래로 스크롤하면 첫 번째 가로 섹션이 시작됩니다.</p>*/}
-      {/*  </div>*/}
-      {/*</section>*/}
+    <>
+      <div className="min-h-[300vh]">
+        {/* 세로 섹션 A */}
+        {/*<section className="min-h-screen grid place-items-center bg-neutral-50">*/}
+        {/*  <div className="max-w-3xl p-8 text-center">*/}
+        {/*    <h1 className="text-4xl font-bold mb-4">Vertical A</h1>*/}
+        {/*    <p className="text-neutral-600">아래로 스크롤하면 첫 번째 가로 섹션이 시작됩니다.</p>*/}
+        {/*  </div>*/}
+        {/*</section>*/}
 
-      {/* 가로 섹션 #1 */}
-      <section ref={pinRef1} className="h-screen overflow-hidden">
-        <div ref={trackRef1} className="horizontal-1 inline-flex h-screen gap-6">
-          <IntroSection />
+        {/* 가로 섹션 #1 */}
+        <section ref={pinRef1} className="h-screen overflow-hidden">
+          <div ref={trackRef1} className="horizontal-1 inline-flex h-screen gap-6">
+            <IntroSection />
 
-          <AboutSection />
-          <div className="flex-none w-[5px]" />
-        </div>
-      </section>
+            <AboutSection />
+            <div className="flex-none w-[5px]" />
+          </div>
+        </section>
 
-      {/* 세로 섹션 B (일반 스크롤) */}
-      <section className="min-h-screen grid place-items-center bg-white">
-        <SkillSection />
-      </section>
+        {/* 세로 섹션 B (일반 스크롤) */}
+        <section className="min-h-screen grid place-items-center bg-white">
+          <SkillSection />
+        </section>
 
-      {/* 가로 섹션 #2 */}
-      <section ref={pinRef2} className="h-screen overflow-hidden">
-        <div ref={trackRef2} className="horizontal-2 inline-flex h-screen gap-6">
-          <ProjectSection />
-          <div className="flex-none w-[200px]" />
-        </div>
-      </section>
+        {/* 가로 섹션 #2 */}
+        <section ref={pinRef2} className="h-screen overflow-hidden">
+          <div ref={trackRef2} className="horizontal-2 inline-flex h-screen gap-6">
+            <ProjectSection />
+            <div className="flex-none w-[200px]" />
+          </div>
+        </section>
 
-      {/* 세로 섹션 C (끝) */}
-      <section className="min-h-screen">
-        <ContactSection />
-      </section>
-    </div>
+        {/* 세로 섹션 C (끝) */}
+        <section className="min-h-screen">
+          <ContactSection />
+        </section>
+
+        {/*<div className="text-4xl fixed right-6 bottom-4">*/}
+        {/*  <LanguageSwitcher />*/}
+        {/*</div>*/}
+        <LanguageGlobeButton />
+      </div>
+    </>
   )
 }

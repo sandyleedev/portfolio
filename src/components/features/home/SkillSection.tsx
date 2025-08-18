@@ -54,7 +54,9 @@ export default function SkillSection() {
           </motion.div>
 
           <motion.div variants={item}>
-            <div className="text-3xl border border-black border-b-0 px-2 py-1">🌐️ Cloud / Infrastructure</div>
+            <div className="text-3xl border border-black border-b-0 px-2 py-1">
+              🌐️ Cloud / Infrastructure
+            </div>
             <motion.div variants={item} className="w-[50vw] border border-black p-4 bg-white">
               <CloudSkillSet />
             </motion.div>

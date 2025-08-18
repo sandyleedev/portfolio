@@ -198,14 +198,14 @@ body {
     auto;
 }
 
-a,
-button,
-[role='button'],
-.cursor-pointer {
-  cursor:
-    url('/icons/folders-cursor.png') 40 40,
-    pointer;
-}
+/*a,*/
+/*button,*/
+/*[role='button'],*/
+/*.cursor-pointer {*/
+/*  cursor:*/
+/*    url('/icons/folders-cursor.png') 40 40,*/
+/*    pointer;*/
+/*}*/
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {
