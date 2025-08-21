@@ -98,6 +98,31 @@
         "Logging & Analytics Instrumentation: Integrated with LG U+ internal logging system, collected and analyzed app entry, active user counts, and group call usage statistics",
         "K8s & Docker Operations: Managed container configurations, monitored runtime status, and responded to incidents"
       ]
+    },
+    "techSupport": {
+      "title": "Real-time Automobile Tech Support Platform (Prototype)",
+      "desc": "A prototype platform that enables workers in automobile maintenance sites to receive remote technical support through real-time video, audio, and chat. The system leverages AWS Chime (WebRTC) for live communication, Redis and PostgreSQL for session/matching management, and SSE for instant notifications to deliver a stable and interactive support experience.",
+      "features": [
+        "One-time login using nickname with session-based authentication",
+        "1:1 automatic worker-supporter matching (FIFO queue based)",
+        "Real-time video/audio/text chat via AWS Chime (WebRTC, Data Channel)",
+        "Connection/session management using Redis with TTL-based auto-cleanup",
+        "Persistent user, meeting, and matching data stored in PostgreSQL",
+        "Server-Sent Events (SSE) for real-time request, acceptance, and termination notifications",
+        "Jenkins pipeline for automated deployment of Spring Boot REST APIs"
+      ],
+      "role": [
+        "Frontend Development: Developed React/TypeScript-based UI and API integrations",
+        "Backend Development: Implemented Spring Boot REST APIs, AWS Chime integration, and SSE notification flow",
+        "Infrastructure: Designed PostgreSQL schema and created Jenkins CI/CD pipeline"
+      ],
+      "contributions": [
+        "Designed and implemented Spring Boot REST APIs and integrated AWS Chime SDK to provide real-time video, audio, and text chat",
+        "Implemented termination flow with AWS DeleteMeeting API and DB cleanup logic to prevent unnecessary billing",
+        "Designed PostgreSQL schema and implemented matching/meeting data management logic",
+        "Built Jenkins pipeline to enable automated build, test, and deployment of the backend application",
+        "Developed basic React/TypeScript UI for login, support request, and meeting room, and integrated with backend APIs"
+      ]
     }
   }
 }
