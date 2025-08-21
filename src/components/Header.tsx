@@ -2,14 +2,12 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { DiamondIcon, Menu } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import { DialogTitle } from '@radix-ui/react-dialog'
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
-import React from 'react'
-import LanguageSwitcher from '@/components/common/LanguageSwitcher'
+import React, { useState } from 'react'
 import LanguageToggle from '@/components/common/LanguageToggle'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip'
 
 const navItems = [
   { label: 'Home', href: '/', icon: '/icons/home.png' },
@@ -20,6 +18,8 @@ const navItems = [
 ]
 
 export function Header() {
+  const [open, setOpen] = useState(false)
+
   return (
     <header>
       {/* Vertical Menu */}
@@ -54,11 +54,11 @@ export function Header() {
       {/*</div>*/}
 
       {/* Mobile Hamburger */}
-      <div className="">
-        <Sheet>
+      <div className="w-6 h-6 fixed z-9 top-4 right-4">
+        <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <button>
-              <Menu className="w-6 h-6 fixed top-4 right-4 cursor-pointer" />
+              <Menu className="cursor-pointer" />
             </button>
           </SheetTrigger>
           <SheetContent side="right" className="w-screen">
@@ -72,6 +72,7 @@ export function Header() {
                   key={href}
                   href={href}
                   className="flex items-center justify-center gap-10 h-[8vh]"
+                  onClick={() => setOpen(false)}
                 >
                   <Image src={icon} alt={label} width={50} height={50} />
                   <div className="pr-2 text-5xl">{label}</div>

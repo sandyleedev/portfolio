@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Starburst from '@/components/ui/Starburst'
+import Link from 'next/link'
 
 export default function IntroSection() {
   const [mounted, setMounted] = useState(false)
@@ -23,14 +24,11 @@ export default function IntroSection() {
             >
               📂 download CV
             </div>
-            <div
-              className="text-xl font-semibold border-2 border-black rounded-full px-4 py-1 hover:bg-zinc-300 cursor-pointer ml-4"
-              onClick={() => {
-                console.log('VIEW PROJECTS')
-              }}
-            >
-              🖥️ View Projects
-            </div>
+            <Link href="/projects">
+              <div className="text-xl font-semibold border-2 border-black rounded-full px-4 py-1 hover:bg-zinc-300 cursor-pointer ml-4">
+                🖥️ View Projects
+              </div>
+            </Link>
           </div>
         </div>
         <img
