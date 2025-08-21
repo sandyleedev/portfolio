@@ -1,10 +1,15 @@
 import { useEffect, useState } from 'react'
 import Starburst from '@/components/ui/Starburst'
 import Link from 'next/link'
+import { useFileDownload } from '@/hooks/useFileDownload'
 
 export default function IntroSection() {
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
+
+  const { downloadFile } = useFileDownload()
+  const cvDownloadUrl = '/docs/CV_SEUNGJILEE.pdf'
+  const cvFileName = 'CV_SEUNGJILEE.pdf'
 
   return (
     <>
@@ -19,7 +24,7 @@ export default function IntroSection() {
             <div
               className="text-xl font-semibold border-2 border-black rounded-full px-4 py-1 bg-green-400 hover:bg-green-200 cursor-pointer ml-4"
               onClick={() => {
-                console.log('CV DOWNLOADED')
+                downloadFile(cvDownloadUrl, cvFileName)
               }}
             >
               📂 download CV
