@@ -90,4 +90,13 @@ export const projectData: ProjectDataType[] = [
       'Jenkins',
     ],
   },
+  {
+    slug: 'approvalWeb',
+    type: ProjectType.Industrial,
+    startMonth: '2023.10',
+    endMonth: '2023.11',
+    imageUrl: '/icons/folders.png',
+    tags: ['React', 'Next.js', 'TypeScript'],
+    stacks: ['React', 'Next.js', 'TypeScript'],
+  },
 ]

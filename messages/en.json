@@ -123,6 +123,31 @@
         "Built Jenkins pipeline to enable automated build, test, and deployment of the backend application",
         "Developed basic React/TypeScript UI for login, support request, and meeting room, and integrated with backend APIs"
       ]
+    },
+    "approvalWeb": {
+      "title": "Internal Electronic Approval Web System",
+      "desc": "Extended the existing app-based electronic approval system to the web. Implemented document review and approval/rejection, attachment handling, leave applications, and user settings. Leveraged existing Java REST APIs, and developed the entire frontend solo using React (Next.js) and TypeScript.",
+      "features": [
+        "View approval documents and approve/reject",
+        "Upload and download document images and attachments",
+        "Register and view comments on approval documents",
+        "Submit leave applications, view status, and check remaining leave",
+        "User settings: password change, delegate designation, e-signature registration/update",
+        "Change email and app push notification preferences"
+      ],
+      "role": [
+        "Frontend Development: Solo development of UI and logic using React (Next.js) + TypeScript",
+        "API Integration: Integrated with existing Java REST APIs for data communication",
+        "UX: Built user-friendly flows for attachments preview/upload and e-signature input"
+      ],
+      "contributions": [
+        "Independently developed the web UI using Next.js and TypeScript",
+        "Integrated with Java REST APIs (documents/leave/settings) with error/loading handling",
+        "Implemented approval flows (approve/reject) and comments features",
+        "Implemented attachments upload/preview/download",
+        "Built leave application/status/remaining balance views",
+        "Developed user settings pages (password, delegate, e-signature, notifications)"
+      ]
     }
   }
 }
