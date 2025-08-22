@@ -2,24 +2,33 @@ import { useEffect, useState } from 'react'
 import Starburst from '@/components/ui/Starburst'
 import Link from 'next/link'
 import { useFileDownload } from '@/hooks/useFileDownload'
+import { useTranslations } from 'next-intl'
+
+const cvDownloadUrl = '/docs/CV_SEUNGJILEE.pdf'
+const cvFileName = 'CV_SEUNGJILEE.pdf'
 
 export default function IntroSection() {
   const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true), [])
-
+  const t = useTranslations('home')
   const { downloadFile } = useFileDownload()
-  const cvDownloadUrl = '/docs/CV_SEUNGJILEE.pdf'
-  const cvFileName = 'CV_SEUNGJILEE.pdf'
+
+  useEffect(() => setMounted(true), [])
 
   return (
     <>
-      <div className="flex-none h-screen px-6 relative">
-        <div className={`${mounted ? 'animate-fadeInUp' : ''} opacity-0 text-[20vh]/[20vh]`}>
-          Jenna Lee, <br />
-          Full Stack Developer <br />2 years Experience
-          <div className="flex items-center">
-            <div className="w-[128px] h-[128px] animate-rotate">
-              <Starburst />
+      {/* page 1 */}
+      <div className="w-[max-content] h-screen px-6 relative flex items-center pb-[10vh]">
+        <div>
+          <div
+            className={`${mounted ? 'animate-fadeInUp' : ''} whitespace-pre-line opacity-0 text-[clamp(10vw,10vw,22vh)]/[100%]`}
+          >
+            {t('intro')}
+          </div>
+
+          {/* button container */}
+          <div className="flex items-center mt-[3vh]">
+            <div className="w-[12vw] h-[12vw] animate-rotate">
+              <Starburst size="12vw" />
             </div>
             <div
               className="text-xl font-semibold border-2 border-black rounded-full px-4 py-1 bg-green-400 hover:bg-green-200 cursor-pointer ml-4"
@@ -30,7 +39,7 @@ export default function IntroSection() {
               📂 download CV
             </div>
             <Link href="/projects">
-              <div className="text-xl font-semibold border-2 border-black rounded-full px-4 py-1 hover:bg-zinc-300 cursor-pointer ml-4">
+              <div className="text-xl font-semibold border-2 border-black rounded-full px-4 py-1 bg-zinc-100 hover:bg-zinc-300 cursor-pointer ml-4">
                 🖥️ View Projects
               </div>
             </Link>
@@ -41,15 +50,14 @@ export default function IntroSection() {
           src="/images/common/computer.png"
         />
       </div>
+
+      {/* page 2 */}
       <div className="h-screen px-2 relative">
-        <div className="w-[100vw] text-wrap pt-[10vh] pl-[1vw] text-[20vh]/[20vh]">
-          <div className="text-2xl pl-2 mb-4 animate-fadeInUp">
-            To deepen my knowledge in computer science and explore AI-driven solutions, <br />I am
-            now pursuing a master’s degree in the UK.
-          </div>
-          Msc Computer Science <br />@ University of Birmingham
+        <div className="w-[100vw] text-wrap pt-[9vh] pl-[1vw] whitespace-pre-line">
+          <div className="text-2xl pl-2 mb-4 animate-fadeInUp">{t('desc')}</div>
+          <div className="text-[clamp(10vw,10vw,22vh)]/[95%]">{t('msc')}</div>
         </div>
-        <div className="absolute bottom-10 right-10 text-9xl text-neutral-300/70">2025-2026</div>
+        <div className="absolute bottom-10 right-10 text-9xl text-neutral-300/70">{t('year')}</div>
       </div>
     </>
   )

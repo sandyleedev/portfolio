@@ -1,7 +1,9 @@
 {
   "home": {
-    "title": "안뇽",
-    "about": "about 페이지로 갑니당"
+    "intro": "Jenna Lee, \nFull Stack Developer\n2 years Experience",
+    "desc": "To deepen my knowledge in computer science and explore AI-driven solutions, \nI am now pursuing a master’s degree in the UK.",
+    "msc": "Msc Computer Science \n@ University of Birmingham",
+    "year": "2025-2026"
   },
   "about": {
     "intro": "3년 차 풀스택 개발자로, React와 TypeScript 기반의 프론트엔드 개발을 주로 담당해왔습니다. 백엔드에서는 Java Spring Boot를 활용해 API 설계와 데이터베이스 연동을 수행하며, 안정적이고 확장 가능한 서비스를 구축했습니다. 또한 프로젝트에서 CI/CD 파이프라인을 설계하고 AWS 서비스와 Docker를 활용해 배포 환경을 구성하는 등, 클라우드와 자동화 분야에서도 실무 경험을 보유하고 있습니다.",
@@ -149,6 +151,5 @@
         "사용자 설정(비밀번호, 대결자, 전자 서명, 알림) 화면 개발"
       ]
     }
-
   }
 }

@@ -1,7 +1,9 @@
 {
   "home": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "intro": "Jenna Lee, \nFull Stack Developer\n2 years Experience",
+    "desc": "To deepen my knowledge in computer science and explore AI-driven solutions, \nI am now pursuing a master’s degree in the UK.",
+    "msc": "Msc Computer Science \n@ University of Birmingham",
+    "year": "2025-2026"
   },
   "about": {
     "intro": "I am a full-stack developer with two years of experience, primarily focused on front-end development using React and TypeScript. On the back end, I have worked with Java Spring Boot to design APIs and integrate databases, building stable and scalable services. I also have hands-on experience in cloud and automation, having designed CI/CD pipelines and set up deployment environments using AWS services and Docker.",
