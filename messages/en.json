@@ -29,25 +29,25 @@
     "certificate": {
       "summary": "☁️ AWS Solutions Architect – Associate\nValidated ability to design cost-efficient, highly available, and fault-tolerant infrastructures. Strengthened cloud architecture and system design expertise.\n🗄️ SQLD (SQL Developer)\nCertified in database design, normalization, and SQL optimization. Enhanced capability to build reliable, data-driven applications.\n💻 Engineer Information Processing\nA national certification by HRD Korea, covering software engineering, databases, OS, and networks. Provided a strong foundation for systematic software development practices.\n🐧 Linux Master Level 2\nIssued by the KAIT. Learned Linux installation, user/permission management, process control, and shell scripting, building a foundation for server and cloud operations.",
       "aws": {
-        "title": "AWS Solution Architect Associate",
+        "title": "AWS Solutions Architect Associate",
         "institute": "Amazon Web Service",
         "date": "May 2025",
         "desc": "• Learned how to design cost-efficient, highly available infrastructure that minimizes risks during failures\n• Gained a deeper understanding of cloud architecture through hands-on experience with multiple AWS services\n• Certified as an AWS Solution Architect – Associate, strengthening cloud and system design expertise"
       },
       "sqld": {
-        "title": "SQL Developer Certificate",
+        "title": "SQL Developer",
         "institute": "Korea Data Agency",
         "date": "April 2025",
         "desc": "• Acquired SQL Developer (SQLD) certification issued by the Korea Data Agency\n• Strengthened expertise in database design, normalization, and SQL optimization\n• Gained practical skills for building reliable and efficient data-driven systems"
       },
       "eip": {
-        "title": "Engineer of Information Processing Certificate",
+        "title": "Engineer of Information Processing",
         "institute": "HRD Korea",
         "date": "September 2025",
         "desc": "• A nationally accredited certification issued by the Human Resources Development Service of Korea (HRD Korea).\n• Covers a wide range of computer science domains, including software engineering, databases, operating systems, and computer networks.\n• Demonstrates the ability to apply fundamental computer science knowledge to practical development environments.\n• This certification provides a strong foundation for systematic software development practices and enhances professional credibility as a developer."
       },
       "linux": {
-        "title": "Linux Master Level 2",
+        "title": "Linux Master (Level 2)",
         "institute": "KAIT",
         "date": "October 2024",
         "desc": "• A certification issued by the Korea Association for ICT Promotion(KAIT), focused on fundamental Linux administration skills.\n• Learned essential topics such as Linux installation and configuration, user and permission management, process control, and basic shell scripting.\n• Strengthened the ability to manage and maintain secure and efficient Linux server environments, serving as a strong foundation for backend and cloud infrastructure operations."
