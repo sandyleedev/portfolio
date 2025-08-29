@@ -148,6 +148,9 @@ export default function DesktopMain() {
     // Horizontal #2
     const horiz2 = setupHorizontal(pin2, track2, 'horiz-2')
 
+    // 전역 공유(프로젝트 섹션에서 containerAnimation으로 참조)
+    ;(window as any).__HSCROLL_2__ = horiz2
+
     // Horizontal #2 Animation
     gsap.utils.toArray<HTMLElement>('.horizontal-2 .reveal').forEach((el) => {
       gsap.from(el, {
@@ -166,6 +169,7 @@ export default function DesktopMain() {
 
     const onResize = () => ScrollTrigger.refresh()
     window.addEventListener('resize', onResize)
+    ScrollTrigger.refresh() // 첫 계산
 
     return () => {
       window.removeEventListener('resize', onResize)

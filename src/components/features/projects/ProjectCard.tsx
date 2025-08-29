@@ -21,7 +21,7 @@ export function ProjectCard({ slug }: ProjectCardProps) {
   return (
     <Link href={`/projects/${slug}`}>
       <Card className="flex w-full h-full flex-col overflow-hidden hover:shadow-lg transition-transform hover:-translate-y-1 cursor-pointer gap-1">
-        <div className="relative w-full h-40 mb-6">
+        <div className="relative w-full h-[100px] mb-6">
           <Image src={project.imageUrl} alt={t(`${slug}.title`)} fill className="object-contain" />
         </div>
 
