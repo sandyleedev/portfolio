@@ -62,7 +62,7 @@ export default function DesktopMain() {
 
       gsap.set(icon, { opacity: 0, scale: 0, transformOrigin: '50% 50%' })
       gsap.set(title, { opacity: 0, y: 20 })
-      gsap.set(lines, { opacity: 0, y: 20 }) // 본문 라인 초기 상태
+      gsap.set(lines, { opacity: 0, y: 20 })
 
       const tl = gsap.timeline({
         scrollTrigger: {
@@ -73,48 +73,32 @@ export default function DesktopMain() {
         },
       })
 
-      // 1) 아이콘
       tl.to(icon, {
         opacity: 1,
         scale: 1,
         duration: 0.8,
         ease: 'back.out(1.6)',
       })
-
-        // 2) 타이틀
         .to(
           title,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            ease: 'power2.out',
-          },
+          { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' },
           '-=0.35',
         )
-
-        // 3) 본문 라인들 (전체 한꺼번에)
         .to(
           lines,
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.7,
-            ease: 'power2.out',
-          },
+          { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' },
           '>-0.1',
-        ) // 아이콘/타이틀 끝난 직후
+        )
     }
 
     makeIconTitleTimeline('.edu-section', '.edu-icon', '.edu-title', { start: 'left 85%' })
     makeIconTitleTimeline('.work-section', '.work-icon', '.work-title', { start: 'left 85%' })
     makeIconTitleTimeline('.certs-section', '.certs-icon', '.certs-title', { start: 'left 85%' })
 
-    // More 버튼 애니메이션
+    // More 버튼
     const moreBtn = document.querySelector<HTMLElement>('.horizontal-1 .more-btn')
     if (moreBtn) {
       gsap.set(moreBtn, { opacity: 0, y: 30 })
-
       gsap.to(moreBtn, {
         opacity: 1,
         y: 0,
@@ -129,7 +113,7 @@ export default function DesktopMain() {
       })
     }
 
-    // Horizontal #1 Animation
+    // Horizontal #1 reveal
     gsap.utils.toArray<HTMLElement>('.horizontal-1 .reveal').forEach((el) => {
       gsap.from(el, {
         opacity: 0,
@@ -147,11 +131,9 @@ export default function DesktopMain() {
 
     // Horizontal #2
     const horiz2 = setupHorizontal(pin2, track2, 'horiz-2')
-
-    // 전역 공유(프로젝트 섹션에서 containerAnimation으로 참조)
     ;(window as any).__HSCROLL_2__ = horiz2
 
-    // Horizontal #2 Animation
+    // Horizontal #2 reveal
     gsap.utils.toArray<HTMLElement>('.horizontal-2 .reveal').forEach((el) => {
       gsap.from(el, {
         opacity: 0,
@@ -169,7 +151,7 @@ export default function DesktopMain() {
 
     const onResize = () => ScrollTrigger.refresh()
     window.addEventListener('resize', onResize)
-    ScrollTrigger.refresh() // 첫 계산
+    ScrollTrigger.refresh()
 
     return () => {
       window.removeEventListener('resize', onResize)
@@ -201,7 +183,6 @@ export default function DesktopMain() {
         <section ref={pinRef2} className="h-screen overflow-hidden">
           <div ref={trackRef2} className="horizontal-2 inline-flex h-screen gap-6">
             <ProjectSection />
-            <div className="flex-none w-[200px]" />
           </div>
         </section>
 
@@ -210,7 +191,6 @@ export default function DesktopMain() {
           <ContactSection />
         </section>
 
-        {/* Language Select Button */}
         <LanguageGlobeButton />
       </div>
     </>
