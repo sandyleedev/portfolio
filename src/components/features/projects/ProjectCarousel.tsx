@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { ProjectCard } from './ProjectCard'
 import { projectData } from '@/data/projects'
 import '@/components/features/projects/ProjectCarousel.css'
 import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
+import { ProjectCardSimple } from '@/components/features/projects/ProjectCardSimple'
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 
 interface ProjectCarouselProps {
   showArrows?: boolean
@@ -142,16 +143,16 @@ export function ProjectCarousel({
       {showArrows && !lockActive && (
         <>
           <button
-            className="absolute top-1/2 left-0 z-20 -translate-y-1/2 -translate-x-full cursor-pointer px-8"
+            className="absolute top-1/2 left-10 z-20 -translate-y-1/2 -translate-x-full cursor-pointer px-8"
             onClick={() => handleArrowClick(1)}
           >
-            <FaArrowLeft className="text-2xl" />
+            <MdKeyboardArrowLeft className="text-6xl"  />
           </button>
           <button
-            className="absolute top-1/2 right-0 z-20 -translate-y-1/2 translate-x-full cursor-pointer px-8"
+            className="absolute top-1/2 right-10 z-20 -translate-y-1/2 translate-x-full cursor-pointer px-8"
             onClick={() => handleArrowClick(-1)}
           >
-            <FaArrowRight className="text-2xl" />
+            <MdKeyboardArrowRight className="text-6xl"  />
           </button>
         </>
       )}
@@ -169,7 +170,7 @@ export function ProjectCarousel({
                   transformOrigin: '50% 50%',
                 }}
               >
-                <ProjectCard slug={slug} />
+                <ProjectCardSimple slug={slug} />
               </div>
             )
           })}

@@ -1,5 +1,3 @@
-// src/components/features/home/BallpitEffect.tsx
-
 import { useEffect, useRef } from 'react'
 import Matter from 'matter-js'
 

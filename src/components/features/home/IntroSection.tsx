@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Starburst from '@/components/ui/Starburst'
 import Link from 'next/link'
 import { useFileDownload } from '@/hooks/useFileDownload'
@@ -10,10 +10,30 @@ const cvFileName = 'CV_SEUNGJILEE.pdf'
 
 export default function IntroSection() {
   const [mounted, setMounted] = useState(false)
+  const [showBallpit, setShowBallpit] = useState(false) // 👈 ballpit 렌더링 여부
+  const page2Ref = useRef<HTMLDivElement>(null)
   const t = useTranslations('home')
   const { downloadFile } = useFileDownload()
 
   useEffect(() => setMounted(true), [])
+
+  // page2 관찰
+  useEffect(() => {
+    if (!page2Ref.current) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+          setShowBallpit(true) // 👈 30% 보일 때 시작
+          observer.disconnect() // 한번만 실행
+        }
+      },
+      {
+        threshold: [0, 0.3, 0.5, 1.0],
+      }
+    )
+    observer.observe(page2Ref.current)
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <>
@@ -53,8 +73,8 @@ export default function IntroSection() {
       </div>
 
       {/* page 2 */}
-      <div className="h-screen px-2 relative">
-        <BallpitEffect />
+      <div ref={page2Ref} className="h-screen px-2 relative">
+        {showBallpit && <BallpitEffect />} {/* 👈 조건부 렌더링 */}
         <div className="w-[100vw] text-wrap pt-[9vh] pl-[1vw] whitespace-pre-line">
           <div className="text-2xl pl-2 mb-4 animate-fadeInUp">{t('desc')}</div>
           <div className="text-[clamp(10vw,10vw,22vh)]/[95%]">{t('msc')}</div>

@@ -19,10 +19,10 @@ export default function ProjectSection() {
         <ProjectCarousel showArrows={true} oneTurnThenRelease />
       </div>
 
-      <div className="w-[40vw] flex justify-center">
-        <Link href="/projects" className="inline-block mt-6 hover:scale-110">
-          <span className="border border-black bg-teal-300 font-semibold rounded-[50%] px-6 py-3 text-black transition">
-            📁 View More
+      <div className="w-[70vw] flex justify-center">
+        <Link href="/projects" className="inline-block mt-6 hover:scale-110 animate-bounce">
+          <span className="border border-black bg-teal-300 text-xl font-semibold rounded-[50%] px-8 py-4 text-black transition">
+            📁 View More !
           </span>
         </Link>
       </div>

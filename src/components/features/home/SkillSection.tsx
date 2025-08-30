@@ -21,12 +21,12 @@ export default function SkillSection() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row gap-30 w-screen justify-center py-20">
+      <div className="flex flex-col md:flex-row gap-[8vw] w-screen justify-center py-20">
         <div className="mt-10 flex-col gap-10 items-center h-[100px]">
           <div className="animate-rotate w-[150px]">
             <Diamond />
           </div>
-          <span className="text-8xl italic">Skills</span>
+          <span className="text-8xl font-semibold italic">Skills</span>
         </div>
 
         <motion.div
@@ -48,7 +48,10 @@ export default function SkillSection() {
 
           <motion.div variants={item}>
             <div className="text-3xl border border-black border-b-0 px-2 py-1">🖥️ BACKEND</div>
-            <motion.div variants={item} className="w-[50vw] border border-black p-4 bg-white">
+            <motion.div
+              variants={item}
+              className="w-[50vw] min-w-[400px] border border-black p-4 bg-white"
+            >
               <BESkillSet />
             </motion.div>
           </motion.div>
@@ -57,13 +60,19 @@ export default function SkillSection() {
             <div className="text-3xl border border-black border-b-0 px-2 py-1">
               🌐️ Cloud / Infrastructure
             </div>
-            <motion.div variants={item} className="w-[50vw] border border-black p-4 bg-white">
+            <motion.div
+              variants={item}
+              className="w-[50vw] min-w-[400px] border border-black p-4 bg-white"
+            >
               <CloudSkillSet />
             </motion.div>
           </motion.div>
           <motion.div variants={item}>
             <div className="text-3xl border border-black border-b-0 px-2 py-1">⚙️ DevOps</div>
-            <motion.div variants={item} className="w-[50vw] border border-black p-4 bg-white">
+            <motion.div
+              variants={item}
+              className="w-[50vw] min-w-[400px] border border-black p-4 bg-white"
+            >
               <DevopsSkillSet />
             </motion.div>
           </motion.div>
