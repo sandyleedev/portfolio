@@ -58,9 +58,15 @@
 
 /* y축 플로팅 (진폭/속도 커스텀 가능) */
 @keyframes floatY {
-  0%   { transform: translateY(0) }
-  50%  { transform: translateY(var(--float-y, -12px)) }
-  100% { transform: translateY(0) }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--float-y, -12px));
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @utility animate-float {
@@ -109,6 +115,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --font-simplecandy: var(--font-simplecandy);
+  --font-ppmori: var(--font-ppmori);
+  --font-valverde: var(--font-valverde);
+  --font-relindo: var(--font-relindo);
+  --font-dealva: var(--font-dealva);
+  --font-farossa: var(--font-farossa);
 }
 
 :root {
@@ -197,15 +209,6 @@ body {
     url('/icons/coconut-tree-cursor.png') 40 40,
     auto;
 }
-
-/*a,*/
-/*button,*/
-/*[role='button'],*/
-/*.cursor-pointer {*/
-/*  cursor:*/
-/*    url('/icons/folders-cursor.png') 40 40,*/
-/*    pointer;*/
-/*}*/
 
 html::-webkit-scrollbar,
 body::-webkit-scrollbar {

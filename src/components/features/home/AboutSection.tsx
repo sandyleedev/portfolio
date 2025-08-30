@@ -12,7 +12,9 @@ export default function AboutSection() {
         <div className="edu-section w-[max-content] h-screen justify-center flex flex-col px-30 pb-[25vh]">
           <div className="flex items-center gap-[5vw]">
             <span className="edu-icon text-[clamp(3rem,15vw,12rem)]">💭</span>
-            <span className="edu-title text-[clamp(2rem,8vw,6rem)] font-semibold">Education</span>
+            <span className="edu-title text-[clamp(2rem,8vw,6rem)] italic">
+              Education
+            </span>
           </div>
 
           <div className="flex flex-col gap-10 pl-[7vw] text-[2vw]">
@@ -38,7 +40,9 @@ export default function AboutSection() {
         <div className="work-section w-[max-content] h-screen justify-center flex flex-col px-30 pb-[15vh]">
           <div className="flex items-center gap-[5vw]">
             <span className="work-icon text-[clamp(3rem,15vw,12rem)]">🧳</span>
-            <span className="work-title text-[clamp(2rem,8vw,6rem)] font-semibold">Work</span>
+            <span className="work-title text-[clamp(2rem,8vw,6rem)] italic">
+              Work
+            </span>
           </div>
 
           <div className="text-[1.8vw] flex flex-col gap-[7vh]">
@@ -73,7 +77,7 @@ export default function AboutSection() {
         <div className="certs-section w-[max-content] h-screen justify-center flex flex-col px-30 pb-[15vh]">
           <div className="flex items-center gap-[5vw]">
             <span className="certs-icon text-[clamp(3rem,15vw,12rem)]">💥</span>
-            <span className="certs-title text-[clamp(2rem,8vw,6rem)] font-semibold">
+            <span className="certs-title text-[clamp(2rem,8vw,6rem)] italic">
               Certificates
             </span>
           </div>

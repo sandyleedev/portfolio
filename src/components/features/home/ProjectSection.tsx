@@ -7,11 +7,11 @@ import { ProjectCarousel } from '@/components/features/projects/ProjectCarousel'
 export default function ProjectSection() {
   return (
     <section className="h-screen flex items-center justify-center px-[10vw]">
-      <div className="text-[7vw] font-semibold">
+      <div className="text-[7vw] italic uppercase">
         <span className="inline-block align-middle animate-rotate">
           <Starburst size="15vw" />
         </span>
-        <span>Projects</span>
+        <span className="font-medium">(Projects)</span>
       </div>
 
       <div className="w-[70vw]">

@@ -1,9 +1,6 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import Link from 'next/link'
-import GithubIcon from '@/components/icons/GithubIcon'
-import LinkedInIcon from '@/components/icons/LinkedInIcon'
-import InstagramIcon from '@/components/icons/InstagramIcon'
 
 export default function ContactSection() {
   const email = 'jennaleework@gmail.com'
@@ -30,7 +27,7 @@ export default function ContactSection() {
   }
   return (
     <>
-      <div className="w-screen px-10 pt-15">
+      <div className="w-screen h-screen px-10 pt-15">
         <Image
           className="animate-float"
           src="/icons/email.png"

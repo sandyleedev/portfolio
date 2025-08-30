@@ -4,11 +4,71 @@ import { routing } from '@/i18n/routing'
 import { cn } from '@/lib/utils'
 import { Header } from '@/components/Header'
 import '@/app/globals.css'
+import localFont from 'next/font/local'
 
 export const metadata = {
   title: 'Portfolio',
   description: 'Developer Portfolio',
 }
+
+const simplecandy = localFont({
+  src: '../../../public/fonts/SimpleCandy.ttf',
+  variable: '--font-simplecandy',
+})
+
+const valverde = localFont({
+  src: '../../../public/fonts/Valverde-CondensedSemibold.otf',
+  variable: '--font-valverde',
+})
+
+const relindo = localFont({
+  src: '../../../public/fonts/Relindo.otf',
+  variable: '--font-relindo',
+})
+const dealva = localFont({
+  src: '../../../public/fonts/Dealva.otf',
+  variable: '--font-dealva',
+})
+const farossa = localFont({
+  src: '../../../public/fonts/Farossa.otf',
+  variable: '--font-farossa',
+})
+
+const ppmori = localFont({
+  src: [
+    {
+      path: '../../../public/fonts/PPMori-Extralight.otf',
+      weight: '200',
+      style: 'normal',
+    },
+    {
+      path: '../../../public/fonts/PPMori-ExtralightItalic.otf',
+      weight: '200',
+      style: 'italic',
+    },
+    {
+      path: '../../../public/fonts/PPMori-Regular.otf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../../public/fonts/PPMori-RegularItalic.otf',
+      weight: '400',
+      style: 'italic',
+    },
+    {
+      path: '../../../public/fonts/PPMori-SemiBold.otf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../../public/fonts/PPMori-SemiBoldItalic.otf',
+      weight: '600',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-ppmori',
+})
 
 export default async function LocaleLayout({
   children,
@@ -25,12 +85,14 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={cn('min-h-screen bg-background font-sans antialiased')}>
+      <body
+        className={cn(
+          `min-h-screen bg-background font-sans antialiased ${relindo.variable} ${farossa.variable} ${dealva.variable} ${simplecandy.variable} ${ppmori.variable} ${valverde.variable}`,
+        )}
+      >
         <NextIntlClientProvider>
           <Header />
-          {/*<main className={"px-4 lg:pl-[150px]"}>{children}</main>*/}
           {children}
-          {/*<main className="max-w-5xl mx-auto px-4 py-8">{children}</main>*/}
         </NextIntlClientProvider>
       </body>
     </html>

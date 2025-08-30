@@ -29,7 +29,7 @@ export default function IntroSection() {
       },
       {
         threshold: [0, 0.3, 0.5, 1.0],
-      }
+      },
     )
     observer.observe(page2Ref.current)
     return () => observer.disconnect()
@@ -41,9 +41,13 @@ export default function IntroSection() {
       <div className="w-[max-content] h-screen px-6 relative flex items-center pb-[10vh]">
         <div>
           <div
-            className={`${mounted ? 'animate-fadeInUp' : ''} whitespace-pre-line opacity-0 text-[clamp(10vw,10vw,22vh)]/[100%]`}
+            className={`${mounted ? 'animate-fadeInUp' : ''} pt-8 whitespace-pre-line opacity-0 text-[clamp(10vw,10vw,22vh)]/[100%] font-light`}
           >
-            {t('intro')}
+            <span className="font-dealva italic">Jenna Lee,</span>
+            <br />
+            <span>Full Stack Developer</span>
+            <br />
+            <span>2 years Experience</span>
           </div>
 
           {/* button container */}
@@ -77,7 +81,11 @@ export default function IntroSection() {
         {showBallpit && <BallpitEffect />} {/* 👈 조건부 렌더링 */}
         <div className="w-[100vw] text-wrap pt-[9vh] pl-[1vw] whitespace-pre-line">
           <div className="text-2xl pl-2 mb-4 animate-fadeInUp">{t('desc')}</div>
-          <div className="text-[clamp(10vw,10vw,22vh)]/[95%]">{t('msc')}</div>
+          <div className="text-[clamp(10vw,10vw,22vh)]/[95%] font-light">
+            <span className="italic ">Msc Computer Science</span>
+            <br />
+            <span className="italic">@ University of Birmingham</span>
+          </div>
         </div>
         <div
           className="absolute bottom-6 right-10 text-9xl font-semibold text-white"
