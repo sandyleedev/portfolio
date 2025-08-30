@@ -3,6 +3,7 @@ import Starburst from '@/components/ui/Starburst'
 import Link from 'next/link'
 import { useFileDownload } from '@/hooks/useFileDownload'
 import { useTranslations } from 'next-intl'
+import BallpitEffect from '@/components/features/home/BallpitEffect'
 
 const cvDownloadUrl = '/docs/CV_SEUNGJILEE.pdf'
 const cvFileName = 'CV_SEUNGJILEE.pdf'
@@ -53,11 +54,17 @@ export default function IntroSection() {
 
       {/* page 2 */}
       <div className="h-screen px-2 relative">
+        <BallpitEffect />
         <div className="w-[100vw] text-wrap pt-[9vh] pl-[1vw] whitespace-pre-line">
           <div className="text-2xl pl-2 mb-4 animate-fadeInUp">{t('desc')}</div>
           <div className="text-[clamp(10vw,10vw,22vh)]/[95%]">{t('msc')}</div>
         </div>
-        <div className="absolute bottom-10 right-10 text-9xl text-neutral-300/70">{t('year')}</div>
+        <div
+          className="absolute bottom-6 right-10 text-9xl font-semibold text-white"
+          style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}
+        >
+          {t('year')}
+        </div>
       </div>
     </>
   )
