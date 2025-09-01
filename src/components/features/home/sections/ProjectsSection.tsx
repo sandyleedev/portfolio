@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Starburst from '@/components/ui/Starburst'
 import { ProjectCarousel } from '@/components/features/projects/ProjectCarousel'
 
-export default function ProjectSection() {
+export default function ProjectsSection() {
   return (
     <section className="h-screen flex items-center justify-center px-[10vw]">
       <div className="text-[7vw] italic uppercase">
@@ -15,8 +15,13 @@ export default function ProjectSection() {
       </div>
 
       <div className="w-[70vw]">
-        {/* ⬇️ 여기서 한 바퀴 돌리고 해제 */}
-        <ProjectCarousel showArrows={true} oneTurnThenRelease />
+        <div className="hidden md:block">
+          <ProjectCarousel showArrows={true} oneTurnThenRelease={true} />
+        </div>
+
+        <div className="md:hidden">
+          <ProjectCarousel showArrows={true} oneTurnThenRelease={false} />
+        </div>
       </div>
 
       <div className="w-[70vw] flex justify-center">

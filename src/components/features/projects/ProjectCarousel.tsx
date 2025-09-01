@@ -178,7 +178,7 @@ export function ProjectCarousel({
 
         {/* 잠금 중 안내(원하면 숨겨도 됨) */}
         {oneTurnThenRelease && lockActive && (
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-sm opacity-70">
+          <div className="absolute bottom-[5vh] left-1/2 -translate-x-1/2 text-sm opacity-70">
             Scroll to explore the project carousel first
           </div>
         )}

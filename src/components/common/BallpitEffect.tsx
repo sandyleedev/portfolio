@@ -1,7 +1,11 @@
 import { useEffect, useRef } from 'react'
 import Matter from 'matter-js'
 
-const BallpitEffect = () => {
+interface BallpitEffectProps {
+  duration: number
+}
+
+const BallpitEffect = ({ duration }: BallpitEffectProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const engineRef = useRef<Matter.Engine | null>(null)
 
@@ -82,7 +86,7 @@ const BallpitEffect = () => {
     const ballInterval = setInterval(createBall, 100)
     const stopAfterFiveSeconds = setTimeout(() => {
       clearInterval(ballInterval)
-    }, 7000)
+    }, duration)
 
     // 클린업 함수
     return () => {

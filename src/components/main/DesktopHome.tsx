@@ -1,14 +1,15 @@
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import IntroSection from '@/components/features/home/IntroSection'
-import AboutSection from '@/components/features/home/AboutSection'
-import SkillSection from '@/components/features/home/SkillSection'
-import ProjectSection from '@/components/features/home/ProjectSection'
-import ContactSection from '@/components/features/home/ContactSection'
-import LanguageGlobeButton from '@/components/common/LanguageGlobeButton'
 
-export default function DesktopMain() {
+import LanguageGlobeButton from '@/components/common/LanguageGlobeButton'
+import IntroSection from '@/components/features/home/sections/IntroSection'
+import AboutSection from '@/components/features/home/sections/AboutSection'
+import SkillsSection from '@/components/features/home/sections/SkillsSection'
+import ProjectsSection from '@/components/features/home/sections/ProjectsSection'
+import ContactSection from '@/components/features/home/sections/ContactSection'
+
+export default function DesktopHome() {
   const pinRef1 = useRef<HTMLDivElement>(null) // Horiz #1 Pin
   const trackRef1 = useRef<HTMLDivElement>(null) // Horiz #1 Track
   const pinRef2 = useRef<HTMLDivElement>(null) // Horiz #2 Pin
@@ -79,16 +80,8 @@ export default function DesktopMain() {
         duration: 0.8,
         ease: 'back.out(1.6)',
       })
-        .to(
-          title,
-          { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' },
-          '-=0.35',
-        )
-        .to(
-          lines,
-          { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' },
-          '>-0.1',
-        )
+        .to(title, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '-=0.35')
+        .to(lines, { opacity: 1, y: 0, duration: 0.7, ease: 'power2.out' }, '>-0.1')
     }
 
     makeIconTitleTimeline('.edu-section', '.edu-icon', '.edu-title', { start: 'left 85%' })
@@ -168,7 +161,7 @@ export default function DesktopMain() {
         {/* Horizontal #1 */}
         <section ref={pinRef1} className="h-screen overflow-hidden">
           <div ref={trackRef1} className="horizontal-1 inline-flex h-screen gap-6">
-            <IntroSection />
+            <IntroSection ballpitDuration={7000} />
             <AboutSection />
             <div className="flex-none w-[5px]" />
           </div>
@@ -176,13 +169,13 @@ export default function DesktopMain() {
 
         {/* Vertical */}
         <section className="min-h-screen grid place-items-center bg-white">
-          <SkillSection />
+          <SkillsSection />
         </section>
 
         {/* Horizontal #2 */}
         <section ref={pinRef2} className="h-screen overflow-hidden">
           <div ref={trackRef2} className="horizontal-2 inline-flex h-screen gap-6">
-            <ProjectSection />
+            <ProjectsSection />
           </div>
         </section>
 

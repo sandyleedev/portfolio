@@ -1,14 +1,16 @@
 import { useEffect, useState, useRef } from 'react'
-import Starburst from '@/components/ui/Starburst'
 import Link from 'next/link'
-import { useFileDownload } from '@/hooks/useFileDownload'
 import { useTranslations } from 'next-intl'
-import BallpitEffect from '@/components/features/home/BallpitEffect'
 
-const cvDownloadUrl = '/docs/CV_SEUNGJILEE.pdf'
-const cvFileName = 'CV_SEUNGJILEE.pdf'
+import { cvDownloadUrl, cvFileName } from '@/constants/common'
+import { useFileDownload } from '@/hooks/useFileDownload'
+import Starburst from '@/components/ui/Starburst'
+import BallpitEffect from '@/components/common/BallpitEffect'
 
-export default function IntroSection() {
+interface IntroSectionProps {
+  ballpitDuration: number
+}
+export default function IntroSection({ ballpitDuration }: IntroSectionProps) {
   const [mounted, setMounted] = useState(false)
   const [showBallpit, setShowBallpit] = useState(false) // 👈 ballpit 렌더링 여부
   const page2Ref = useRef<HTMLDivElement>(null)
@@ -38,10 +40,10 @@ export default function IntroSection() {
   return (
     <>
       {/* page 1 */}
-      <div className="w-[max-content] h-screen px-6 relative flex items-center pb-[10vh]">
+      <div className="w-[100vw] md:w-[max-content] min-h-screen px-6 relative flex py-[10vh] md:py-0">
         <div>
           <div
-            className={`${mounted ? 'animate-fadeInUp' : ''} pt-8 whitespace-pre-line opacity-0 text-[clamp(10vw,10vw,22vh)]/[100%] font-light`}
+            className={`${mounted ? 'animate-fadeInUp' : ''} md:w-[100vw] sm:pt-12 md:pt-20 whitespace-pre-line opacity-0 text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(10vw,10vw,22vh)]/[100%] font-light `}
           >
             <span className="font-dealva italic">Jenna Lee,</span>
             <br />
@@ -51,12 +53,12 @@ export default function IntroSection() {
           </div>
 
           {/* button container */}
-          <div className="flex items-center mt-[3vh]">
+          <div className="flex flex-col gap-3 md:flex-row md:gap-0 items-center mt-[3vh]">
             <div className="w-[12vw] h-[12vw] animate-rotate">
               <Starburst size="12vw" />
             </div>
             <div
-              className="text-xl font-semibold border-2 border-black rounded-full px-4 py-1 bg-green-400 hover:bg-green-200 cursor-pointer ml-4"
+              className="text-[5vw] md:text-xl font-semibold border-2 border-black rounded-full px-4 py-1 bg-green-400 hover:bg-green-200 cursor-pointer ml-4 text-center"
               onClick={() => {
                 downloadFile(cvDownloadUrl, cvFileName)
               }}
@@ -64,31 +66,39 @@ export default function IntroSection() {
               📂 download CV
             </div>
             <Link href="/projects">
-              <div className="text-xl font-semibold border-2 border-black rounded-full px-4 py-1 bg-zinc-100 hover:bg-zinc-300 cursor-pointer ml-4">
+              <div className="text-[5vw] md:text-xl font-semibold border-2 border-black rounded-full px-4 py-1 bg-zinc-100 hover:bg-zinc-300 cursor-pointer ml-4 text-center">
                 🖥️ View Projects
               </div>
             </Link>
           </div>
         </div>
         <img
-          className="absolute bottom-0 right-0 -z-1 opacity-70 animate-float"
+          className="absolute bottom-0 right-[5vw] -z-1 opacity-70 animate-float w-[50vw] md:w-[400px]"
           src="/images/common/computer.png"
         />
       </div>
 
       {/* page 2 */}
-      <div ref={page2Ref} className="h-screen px-2 relative">
-        {showBallpit && <BallpitEffect />} {/* 👈 조건부 렌더링 */}
-        <div className="w-[100vw] text-wrap pt-[9vh] pl-[1vw] whitespace-pre-line">
-          <div className="text-2xl pl-2 mb-4 animate-fadeInUp">{t('desc')}</div>
-          <div className="text-[clamp(10vw,10vw,22vh)]/[95%] font-light">
+      <div ref={page2Ref} className="h-screen px-2 relative flex flex-col justify-between">
+        {showBallpit && <BallpitEffect duration={ballpitDuration} />}
+
+        {/* desc */}
+        <div className="text-md md:text-2xl pt-[9vh] px-2 mb-4 animate-fadeInUp whitespace-pre-line">
+          {t('desc')}
+        </div>
+
+        {/* main */}
+        <div className="w-[100vw] text-wrap pl-[1vw] flex-1">
+          <div className="text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(9vw,9vw,22vh)]/[95%] font-light">
             <span className="italic ">Msc Computer Science</span>
             <br />
             <span className="italic">@ University of Birmingham</span>
           </div>
         </div>
+
+        {/* year */}
         <div
-          className="absolute bottom-6 right-10 text-9xl font-semibold text-white"
+          className="text-[clamp(8vw,8vw,14vh)]/[100%] md:text-8xl font-semibold text-white italic text-right md:pr-5 pb-5"
           style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}
         >
           {t('year')}

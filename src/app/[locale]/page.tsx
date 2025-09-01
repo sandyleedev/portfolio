@@ -1,9 +1,9 @@
 'use client'
 
-import DesktopMain from '@/components/main/DesktopMain'
-import MobileMain from '@/components/main/MobileMain'
+import DesktopMain from '@/components/main/DesktopHome'
+import MobileMain from '@/components/main/MobileHome'
 
-export default function MainPage() {
+export default function HomePage() {
   return (
     <>
       <div className="hidden md:block">
