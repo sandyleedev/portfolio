@@ -43,7 +43,7 @@ export default function IntroSection({ ballpitDuration }: IntroSectionProps) {
       <div className="w-[100vw] md:w-[max-content] min-h-screen px-6 relative flex py-[10vh] md:py-0">
         <div>
           <div
-            className={`${mounted ? 'animate-fadeInUp' : ''} md:w-[100vw] sm:pt-12 md:pt-20 whitespace-pre-line opacity-0 text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(10vw,10vw,22vh)]/[100%] font-light `}
+            className={`${mounted ? 'animate-fadeInUp' : ''} md:w-[100vw] sm:pt-10 md:pt-20 whitespace-pre-line opacity-0 text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(10vw,10vw,22vh)]/[100%] font-light `}
           >
             <span className="font-dealva italic">Jenna Lee,</span>
             <br />

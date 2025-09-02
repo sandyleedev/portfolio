@@ -1,7 +1,7 @@
+'use client'
+
 import React, { useRef, useEffect, useState } from 'react'
 import { projectData } from '@/data/projects'
-import '@/components/features/projects/ProjectCarousel.css'
-import { FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 import { ProjectCardSimple } from '@/components/features/projects/ProjectCardSimple'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 
@@ -35,37 +35,31 @@ export function ProjectCarousel({
   ).current
 
   const handleScroll = (e: WheelEvent) => {
-    // 잠금 모드일 때만 페이지 스크롤 막고 회전시킴
     if (lockActive) {
       e.preventDefault()
       const direction = e.deltaY > 0 ? -1 : 1
-      // “한 스텝(= 한 카드)” 회전
       setCurrentRotation((prev) => prev + direction * ROTATION_PER_CARD)
       stepsTakenRef.current += 1
 
-      // 한 바퀴 완료(카드 수만큼 이동) → 잠금 해제
       if (stepsTakenRef.current >= TOTAL_CARDS) {
         setLockActive(false)
-        detachWheel() // 더 이상 가로채지 않음 → 메인 스크롤 재개
+        detachWheel()
       }
       return
     }
 
-    // 잠금 해제 후에는 기존 부드러운 회전(옵션)
     const direction = e.deltaY > 0 ? -1 : 1
     debouncedScroll(direction)
   }
 
   const handleArrowClick = (direction: number) => {
-    if (lockActive) return // 잠금 중에는 화살표 무시(원하면 허용 가능)
+    if (lockActive) return
     debouncedScroll(direction)
   }
 
-  // wheel 리스너 부착/해제 헬퍼
   const attachWheel = () => {
     const el = carouselRef.current
     if (!el) return
-    // passive:false 여야 preventDefault 가능
     el.addEventListener('wheel', handleScroll as any, { passive: false })
   }
   const detachWheel = () => {
@@ -78,18 +72,15 @@ export function ProjectCarousel({
     const el = carouselRef.current
     if (!el) return
 
-    // 캐러셀에 마우스 들어오면(hover/focus) 한 바퀴 모드가 켜져 있으면 wheel 가로채기
     const onEnter = () => {
       if (lockActive) attachWheel()
     }
     const onLeave = () => {
-      // 영역을 벗어나면 굳이 가로채지 않음
       detachWheel()
     }
 
     el.addEventListener('mouseenter', onEnter)
     el.addEventListener('mouseleave', onLeave)
-    // 초기 진입 시 포인터가 이미 위에 있을 수도 있으니 한 번 보정
     if (lockActive) attachWheel()
 
     return () => {
@@ -97,11 +88,10 @@ export function ProjectCarousel({
       el.removeEventListener('mouseleave', onLeave)
       detachWheel()
     }
-    // lockActive가 false가 되면 자연히 detachWheel이 호출됨
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lockActive])
 
-  // 각 카드의 시각적 속성 계산
+  // 각 카드의 시각적 속성 계산 (동적 스타일은 그대로 인라인)
   const getCardStyle = (index: number) => {
     const initialCardRotation = index * ROTATION_PER_CARD
 
@@ -145,26 +135,34 @@ export function ProjectCarousel({
           <button
             className="absolute top-1/2 left-10 z-20 -translate-y-1/2 -translate-x-full cursor-pointer px-8"
             onClick={() => handleArrowClick(1)}
+            aria-label="previous"
           >
-            <MdKeyboardArrowLeft className="text-6xl"  />
+            <MdKeyboardArrowLeft className="text-6xl" />
           </button>
           <button
             className="absolute top-1/2 right-10 z-20 -translate-y-1/2 translate-x-full cursor-pointer px-8"
             onClick={() => handleArrowClick(-1)}
+            aria-label="next"
           >
-            <MdKeyboardArrowRight className="text-6xl"  />
+            <MdKeyboardArrowRight className="text-6xl" />
           </button>
         </>
       )}
 
-      <div className="carousel-container" ref={carouselRef}>
-        <div className="carousel-wrapper" style={{ transform: `rotateY(${currentRotation}deg)` }}>
+      <div
+        ref={carouselRef}
+        className="relative w-full h-screen flex justify-center items-center overflow-hidden [perspective:1500px]"
+      >
+        <div
+          className="absolute inset-0 [transform-style:preserve-3d] transition-transform duration-[800ms] ease-in-out"
+          style={{ transform: `rotateY(${currentRotation}deg)` }}
+        >
           {SLUGS.map((slug, index) => {
             const cardStyle = getCardStyle(index)
             return (
               <div
                 key={slug + index}
-                className="carousel-item"
+                className="absolute top-1/2 left-1/2 origin-center w-[300px] h-[400px] -mt-[200px] -ml-[150px] transition-opacity transition-transform duration-300 ease-linear"
                 style={{
                   ...cardStyle,
                   transformOrigin: '50% 50%',
@@ -176,7 +174,7 @@ export function ProjectCarousel({
           })}
         </div>
 
-        {/* 잠금 중 안내(원하면 숨겨도 됨) */}
+        {/* 잠금 중 안내 */}
         {oneTurnThenRelease && lockActive && (
           <div className="absolute bottom-[5vh] left-1/2 -translate-x-1/2 text-sm opacity-70">
             Scroll to explore the project carousel first
@@ -190,11 +188,7 @@ export function ProjectCarousel({
 function debounce<T extends (...args: any[]) => void>(func: T, delay: number) {
   let timeout: ReturnType<typeof setTimeout> | null = null
   return function (this: any, ...args: Parameters<T>) {
-    if (timeout) {
-      clearTimeout(timeout)
-    }
-    timeout = setTimeout(() => {
-      func.apply(this, args)
-    }, delay)
+    if (timeout) clearTimeout(timeout)
+    timeout = setTimeout(() => func.apply(this, args), delay)
   }
 }

@@ -9,7 +9,7 @@ export default function AboutSection() {
     <>
       <div className="min-w-screen md:h-screen pl-[6vw] md:pl-20 md:py-5 flex flex-col md:flex-row gap-20">
         {/* Education */}
-        <div className="edu-section md:w-[max-content] h-screen justify-center flex flex-col gap-10 md:gap-0 md:px-30 md:pb-[25vh]">
+        <div className="edu-section md:w-[max-content] md:h-screen justify-center flex flex-col gap-10 md:gap-0 md:px-30 md:pb-[25vh] pt-[20vh] md:pt-0">
           <div className="flex items-center gap-[5vw]">
             <span className="edu-icon text-[clamp(3rem,15vw,12rem)]">💭</span>
             <span className="edu-title text-[12vw] md:text-[clamp(2rem,8vw,6rem)] italic">
@@ -47,7 +47,7 @@ export default function AboutSection() {
         </div>
 
         {/* Work */}
-        <div className="work-section md:w-[max-content] h-screen justify-center flex flex-col md:px-30 md:pb-[15vh]">
+        <div className="work-section md:w-[max-content] md:h-screen justify-center flex flex-col md:px-30 md:pb-[15vh] pt-[10vh] md:pt-0">
           <div className="flex items-center gap-[5vw]">
             <span className="work-icon text-[clamp(3rem,15vw,12rem)]">🧳</span>
             <span className="work-title text-[12vw] md:text-[clamp(2rem,8vw,6rem)] italic">
@@ -91,7 +91,7 @@ export default function AboutSection() {
         </div>
 
         {/* Certificates */}
-        <div className="certs-section md:w-[max-content] h-screen justify-center flex flex-col gap-10 md:gap-2 md:px-30 md:pb-[15vh]">
+        <div className="certs-section md:w-[max-content] md:h-screen justify-center flex flex-col gap-10 md:gap-2 md:px-30 md:pb-[15vh] pt-[10vh] md:pt-0">
           <div className="flex items-center gap-[5vw]">
             <span className="certs-icon text-[clamp(3rem,15vw,12rem)]">💥</span>
             <span className="certs-title text-[10vw] md:text-[clamp(2rem,8vw,6rem)] italic">
@@ -99,7 +99,7 @@ export default function AboutSection() {
             </span>
           </div>
 
-          <div className="flex flex-col gap-10 pl-[8vw] md:pl-20 text-[4vw] md:text-[1.8vw]">
+          <div className="flex flex-col gap-10 pl-[10px] md:pl-20 text-[4vw] md:text-[1.8vw]">
             <div className="flex flex-col">
               <div className="flex gap-10 reveal-line">
                 <span>❇️</span>
@@ -128,8 +128,8 @@ export default function AboutSection() {
         </div>
 
         {/* More */}
-        <div className="more-section md:w-[max-content] h-screen justify-center items-center flex md:flex-col gap-[5vh] md:pl-40 md:pr-[40vw]">
-          <Link href="/about" className="w-[max-content]">
+        <div className="more-section md:w-[max-content] md:h-screen justify-center items-center flex md:flex-col gap-[5vh] md:pl-40 md:pr-[40vw] py-[30vh] md:py-0">
+          <Link href="/about" className="w-[max-content] animate-float">
             <div className="more-btn text-[5vw] md:text-[clamp(1rem,3vw,2rem)] border border-black px-6 rounded-full flex items-center gap-2 cursor-pointer bg-green-400 hover:scale-105 hover:bg-green-200">
               <RxCursorArrow /> Learn More About Me
             </div>

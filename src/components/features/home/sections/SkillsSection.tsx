@@ -67,7 +67,7 @@ export default function SkillsSection() {
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, amount: 0.4 }}
+          viewport={{ once: true, amount: 0.1 }}
         >
           {SECTIONS.map(({ id, title, Component }) => (
             <SkillBlock key={id} title={title}>
