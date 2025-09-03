@@ -27,14 +27,14 @@ type SectionItem = {
 const SECTIONS: SectionItem[] = [
   { id: 'fe', title: '✳️ FRONTEND', Component: FESkillSet },
   { id: 'be', title: '🖥️ BACKEND', Component: BESkillSet },
-  { id: 'cloud', title: '🌐️ Cloud / Infrastructure', Component: CloudSkillSet },
+  { id: 'cloud', title: '🌐️ Cloud / Infra', Component: CloudSkillSet },
   { id: 'devops', title: '⚙️ DevOps', Component: DevopsSkillSet },
 ]
 
 function SkillBlock({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <motion.div variants={item}>
-      <div className="text-3xl border border-black border-b-0 px-2 py-1">{title}</div>
+      <div className="text-[5vw] md:text-3xl border border-black border-b-0 px-2 py-1">{title}</div>
       <motion.div
         variants={item}
         className="w-[90vw] md:w-[50vw] md:min-w-[500px] border border-black p-4 bg-white"
@@ -48,8 +48,8 @@ function SkillBlock({ title, children }: { title: string; children: React.ReactN
 export default function SkillsSection() {
   return (
     <>
-      <div className="flex flex-col w-screen justify-center items-center p-20">
-        <div className="flex mt-10 gap-3 md:gap-10 items-center w-[100vw] pl-[5vw] md:pl-20">
+      <div className="flex flex-col w-screen md:justify-center items-center md:p-20">
+        <div className="flex flex-col md:flex-row mt-10 md:gap-10 md:items-center md:w-[100vw] md:pl-20">
           <div className="animate-rotate w-[80px] md:w-[150px] mb-[20px]">
             <div className="md:hidden">
               <Diamond size={80} />
@@ -58,12 +58,11 @@ export default function SkillsSection() {
               <Diamond size={150} />
             </div>
           </div>
-          <span className="text-6xl md:text-8xl font-ppmori italic font-semibold">(SKILLS)</span>
-          <br />
+          <span className="text-[15vw] md:text-8xl font-ppmori italic font-semibold">(SKILLS)</span>
         </div>
 
         <motion.div
-          className="flex flex-col items-center gap-10 pt-10 w-[90vw] md:w-[50vw] md:min-w-[500px]"
+          className="flex flex-col justify-center items-center gap-10 pt-10 w-full md:w-[50vw] md:min-w-[500px]"
           variants={container}
           initial="hidden"
           whileInView="show"

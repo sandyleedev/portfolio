@@ -7,11 +7,14 @@ import { ProjectCarousel } from '@/components/features/projects/ProjectCarousel'
 export default function ProjectsSection() {
   return (
     <section className="md:h-screen flex flex-col md:flex-row items-center justify-center px-[10vw] my-[20vh] md:my-0">
-      <div className="text-[10vw] md:text-[7vw] italic uppercase">
-        <span className="inline-block align-middle animate-rotate">
+      <div className="italic uppercase flex flex-col justify-center items-end md:block">
+        <span className="hidden md:block w-[15vw] align-middle animate-rotate">
           <Starburst size="15vw" />
         </span>
-        <span className="font-medium">(Projects)</span>
+        <span className="md:hidden w-[30vw] align-middle animate-rotate">
+          <Starburst size="30vw" />
+        </span>
+        <span className="text-[14vw] md:text-[7vw] font-medium">(Projects)</span>
       </div>
 
       <div className="w-[70vw]">

@@ -151,7 +151,7 @@ export function ProjectCarousel({
 
       <div
         ref={carouselRef}
-        className="relative w-full min-h-[80vh] md:h-screen flex justify-center items-center overflow-hidden [perspective:1500px]"
+        className="relative w-full min-h-[110vh] md:h-screen flex justify-center items-center overflow-hidden [perspective:1500px]"
       >
         <div
           className="absolute inset-0 [transform-style:preserve-3d] transition-transform duration-[800ms] ease-in-out"
