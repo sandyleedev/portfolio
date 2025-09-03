@@ -10,7 +10,7 @@ export default function MobileHome() {
       <IntroSection ballpitDuration={3000} />
       <AboutSection />
       <SkillsSection />
-      {/*<ProjectsSection />*/}
+      <ProjectsSection />
       {/*<ContactSection />*/}
     </>
   )

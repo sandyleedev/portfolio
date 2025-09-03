@@ -6,8 +6,8 @@ import { ProjectCarousel } from '@/components/features/projects/ProjectCarousel'
 
 export default function ProjectsSection() {
   return (
-    <section className="h-screen flex items-center justify-center px-[10vw]">
-      <div className="text-[7vw] italic uppercase">
+    <section className="md:h-screen flex flex-col md:flex-row items-center justify-center px-[10vw] my-[20vh] md:my-0">
+      <div className="text-[10vw] md:text-[7vw] italic uppercase">
         <span className="inline-block align-middle animate-rotate">
           <Starburst size="15vw" />
         </span>

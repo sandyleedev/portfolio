@@ -151,7 +151,7 @@ export function ProjectCarousel({
 
       <div
         ref={carouselRef}
-        className="relative w-full h-screen flex justify-center items-center overflow-hidden [perspective:1500px]"
+        className="relative w-full min-h-[80vh] md:h-screen flex justify-center items-center overflow-hidden [perspective:1500px]"
       >
         <div
           className="absolute inset-0 [transform-style:preserve-3d] transition-transform duration-[800ms] ease-in-out"
@@ -162,7 +162,11 @@ export function ProjectCarousel({
             return (
               <div
                 key={slug + index}
-                className="absolute top-1/2 left-1/2 origin-center w-[300px] h-[400px] -mt-[200px] -ml-[150px] transition-opacity transition-transform duration-300 ease-linear"
+                className="absolute top-1/2 left-1/2 origin-center
+                w-[50vw] max-w-[280px] min-h-max
+                md:w-[300px] md:h-[400px]
+                -translate-x-1/2 -translate-y-1/2
+                transition-opacity transition-transform duration-300 ease-linear"
                 style={{
                   ...cardStyle,
                   transformOrigin: '50% 50%',
