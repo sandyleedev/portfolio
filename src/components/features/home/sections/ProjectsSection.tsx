@@ -17,7 +17,7 @@ export default function ProjectsSection() {
         <span className="text-[14vw] md:text-[7vw] font-medium">(Projects)</span>
       </div>
 
-      <div className="w-[70vw]">
+      <div className="w-full md:w-[70vw]">
         <div className="hidden md:block">
           <ProjectCarousel showArrows={true} oneTurnThenRelease={true} />
         </div>

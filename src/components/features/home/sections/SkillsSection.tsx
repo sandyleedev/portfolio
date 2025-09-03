@@ -48,9 +48,10 @@ function SkillBlock({ title, children }: { title: string; children: React.ReactN
 export default function SkillsSection() {
   return (
     <>
-      <div className="flex flex-col w-screen md:justify-center items-center md:p-20">
-        <div className="flex flex-col md:flex-row mt-10 md:gap-10 md:items-center md:w-[100vw] md:pl-20">
-          <div className="animate-rotate w-[80px] md:w-[150px] mb-[20px]">
+      <div className="flex flex-col w-screen md:justify-center items-center pb-10 md:p-20">
+        {/* title */}
+        <div className="w-full flex flex-col md:flex-row mt-10 md:gap-10 md:items-center pl-[5vw] md:pl-20">
+          <div className="animate-rotate w-[80px] md:w-[150px] mb-[5px] md:mb-[20px]">
             <div className="md:hidden">
               <Diamond size={80} />
             </div>

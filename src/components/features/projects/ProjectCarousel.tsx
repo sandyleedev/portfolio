@@ -91,7 +91,6 @@ export function ProjectCarousel({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lockActive])
 
-  // 각 카드의 시각적 속성 계산 (동적 스타일은 그대로 인라인)
   const getCardStyle = (index: number) => {
     const initialCardRotation = index * ROTATION_PER_CARD
 
@@ -129,18 +128,17 @@ export function ProjectCarousel({
 
   return (
     <div className="relative w-full">
-      {/* showArrows가 true이고, 잠금 해제 이후에만 버튼 노출 */}
       {showArrows && !lockActive && (
         <>
           <button
-            className="absolute top-1/2 left-10 z-20 -translate-y-1/2 -translate-x-full cursor-pointer px-8"
+            className="absolute top-1/2 left-16 md:left-10 z-20 -translate-y-1/2 -translate-x-full cursor-pointer pr-8"
             onClick={() => handleArrowClick(1)}
             aria-label="previous"
           >
             <MdKeyboardArrowLeft className="text-6xl" />
           </button>
           <button
-            className="absolute top-1/2 right-10 z-20 -translate-y-1/2 translate-x-full cursor-pointer px-8"
+            className="absolute top-1/2 right-16 md:right-10 z-20 -translate-y-1/2 translate-x-full cursor-pointer pl-8"
             onClick={() => handleArrowClick(-1)}
             aria-label="next"
           >
@@ -177,13 +175,6 @@ export function ProjectCarousel({
             )
           })}
         </div>
-
-        {/* 잠금 중 안내 */}
-        {oneTurnThenRelease && lockActive && (
-          <div className="absolute bottom-[5vh] left-1/2 -translate-x-1/2 text-sm opacity-70">
-            Scroll to explore the project carousel first
-          </div>
-        )}
       </div>
     </div>
   )

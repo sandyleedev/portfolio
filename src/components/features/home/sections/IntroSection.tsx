@@ -40,7 +40,7 @@ export default function IntroSection({ ballpitDuration }: IntroSectionProps) {
   return (
     <>
       {/* page 1 */}
-      <div className="w-[100vw] md:w-[max-content] min-h-screen px-6 relative flex py-[50px] sm:py-[100px] md:py-0">
+      <div className="w-full md:w-[max-content] min-h-screen px-6 relative flex py-[50px] sm:py-[100px] md:py-0">
         <div>
           <div
             className={`${mounted ? 'animate-fadeInUp' : ''} md:w-[100vw] md:pt-20 whitespace-pre-line opacity-0 text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(10vw,10vw,22vh)]/[100%] font-light `}
@@ -88,7 +88,7 @@ export default function IntroSection({ ballpitDuration }: IntroSectionProps) {
         </div>
 
         {/* main */}
-        <div className="w-[100vw] text-wrap pl-[1vw] flex-1">
+        <div className="w-full text-wrap pl-[1vw] flex-1">
           <div className="text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(9vw,9vw,22vh)]/[95%] font-light">
             <span className="italic ">Msc Computer Science</span>
             <br />

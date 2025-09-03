@@ -87,7 +87,7 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body
         className={cn(
-          `min-h-screen bg-background font-sans antialiased ${relindo.variable} ${farossa.variable} ${dealva.variable} ${simplecandy.variable} ${ppmori.variable} ${valverde.variable}`,
+          `min-h-screen overflow-x-hidden bg-background font-sans antialiased ${relindo.variable} ${farossa.variable} ${dealva.variable} ${simplecandy.variable} ${ppmori.variable} ${valverde.variable}`,
         )}
       >
         <NextIntlClientProvider>

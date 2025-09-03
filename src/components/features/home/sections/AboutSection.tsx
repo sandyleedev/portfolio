@@ -126,15 +126,15 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
+      </div>
 
-        {/* More */}
-        <div className="more-section md:w-[max-content] md:h-screen justify-center items-center flex md:flex-col gap-[5vh] md:pl-40 md:pr-[40vw] py-[30vh] md:py-0">
-          <Link href="/about" className="w-[max-content] animate-float">
-            <div className="more-btn text-[5vw] md:text-[clamp(1rem,3vw,2rem)] border border-black px-6 rounded-full flex items-center gap-2 cursor-pointer bg-green-400 hover:scale-105 hover:bg-green-200">
-              <RxCursorArrow /> Learn More About Me
-            </div>
-          </Link>
-        </div>
+      {/* More */}
+      <div className="more-section md:w-[max-content] md:h-screen justify-center items-center flex md:flex-col gap-[5vh] md:pl-40 md:pr-[40vw] py-[30vh] md:py-0">
+        <Link href="/about" className="w-[max-content] animate-float">
+          <div className="more-btn text-[5vw] md:text-[clamp(1rem,3vw,2rem)] border border-black px-6 rounded-full flex items-center gap-2 cursor-pointer bg-green-400 hover:scale-105 hover:bg-green-200">
+            <RxCursorArrow /> Learn More About Me
+          </div>
+        </Link>
       </div>
     </>
   )

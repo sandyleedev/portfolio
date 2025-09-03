@@ -54,14 +54,14 @@ export function Header() {
       {/*</div>*/}
 
       {/* Mobile Hamburger */}
-      <div className="w-6 h-6 fixed z-9 top-4 right-4">
+      <div className="w-6 h-6 fixed z-50 top-4 right-4">
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
             <button>
               <Menu className="cursor-pointer" />
             </button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-screen">
+          <SheetContent side="right" className="w-full">
             <DialogTitle>
               <VisuallyHidden>Navigation Menu</VisuallyHidden>
             </DialogTitle>
