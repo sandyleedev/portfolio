@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import Link from 'next/link'
+import GithubIcon from '@/components/icons/GithubIcon'
+import LinkedInIcon from '@/components/icons/LinkedInIcon'
 
 export default function ContactSection() {
   const email = 'jennaleework@gmail.com'
@@ -27,47 +29,63 @@ export default function ContactSection() {
   }
   return (
     <>
-      <div className="w-screen h-screen px-10 pt-15">
-        <Image
-          className="animate-float"
-          src="/icons/email.png"
-          alt="email-icon"
-          width={200}
-          height={150}
-        />
-        <div className="text-9xl">Contact Me!</div>
+      <div className="flex flex-col items-center gap-15 md:block w-screen h-screen md:px-10 pt-15">
+        <div className="w-full px-[10vw] md:px-0">
+          {/* mail icon */}
+          <div className="w-full">
+            <Image
+              className="animate-float"
+              src="/icons/email.png"
+              alt="email-icon"
+              width={200}
+              height={150}
+            />
+          </div>
+
+          {/* title */}
+          <div className="w-full text-[18vw]/[110%] md:text-9xl">
+            Contact <br />
+            Me!
+          </div>
+        </div>
 
         {/* Email with copy button */}
-        <div className="flex p-4 gap-4 mt-3">
-          <span className="text-4xl">{email}</span>
+        <div className="flex flex-col md:flex-row md:p-4 gap-4 md:mt-3">
+          <span className="text-[5vw] md:text-4xl">{email}</span>
           <div
             onClick={copy}
-            className="border border-black rounded-full px-5 py-1 flex items-center justify-center text-3xl cursor-pointer"
+            className="border border-black rounded-full px-5 py-1 flex items-center justify-center text-[4.5vw] md:text-3xl cursor-pointer"
           >
             {copied ? 'Copied!' : 'Copy'}
           </div>
         </div>
 
         {/* SNS link */}
-        <div className="p-3 flex gap-5">
+        <div className="p-3 flex gap-5 pb-[10vh] md:pb-[7vh]">
           <Link href={githubUrl} target="_blank">
-            <div className="text-3xl border border-black rounded-full px-3 py-1 cursor-pointer flex items-center gap-2">
-              {/*<GithubIcon size="35px" /> */}
-              🖥️ Github
+            <div className="text-3xl border border-black rounded-full px-3 py-1 cursor-pointer flex justify-center items-center gap-2 w-[62px] md:w-auto h-[45px] md:h-auto">
+              <span className="md:hidden">
+                <GithubIcon size="35px" />
+              </span>
+              <span className="hidden md:block">🖥️ Github</span>
             </div>
           </Link>
 
           <Link href={instagramUrl} target="_blank">
-            <div className="text-3xl border border-black rounded-full px-3 py-1 cursor-pointer flex items-center gap-2">
-              {/*<InstagramIcon size="40px" />*/}
-              💭 Instagram
+            <div className="text-3xl border border-black rounded-full px-3 py-1 cursor-pointer flex justify-center items-center gap-2 w-[62px] md:w-auto h-[45px] md:h-auto">
+              <span className="md:hidden">
+                <img src="/icons/instagram_icon.png" className="w-[32px]" />
+              </span>
+              <span className="hidden md:block">💭 Instagram</span>
             </div>
           </Link>
 
           <Link href={linkedinUrl} target="_blank">
-            <div className="text-3xl border border-black rounded-full px-4 py-1 cursor-pointer flex items-center gap-2">
-              {/*<LinkedInIcon size="32px" />*/}
-              🧤 LinkedIn
+            <div className="text-3xl border border-black rounded-full px-4 py-1 cursor-pointer flex justify-center items-center gap-2 w-[62px] md:w-auto h-[45px] md:h-auto">
+              <span className="md:hidden">
+                <LinkedInIcon size="32px" />
+              </span>
+              <span className="hidden md:block">🧤 LinkedIn</span>
             </div>
           </Link>
         </div>
