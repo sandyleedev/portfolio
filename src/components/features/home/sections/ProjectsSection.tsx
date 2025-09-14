@@ -6,7 +6,7 @@ import { ProjectCarousel } from '@/components/features/projects/ProjectCarousel'
 
 export default function ProjectsSection() {
   return (
-    <section className="md:h-screen flex flex-col md:flex-row items-center justify-center px-[10vw] my-[20vh] md:my-0">
+    <section className="md:h-screen flex flex-col md:flex-row md:gap-[20vw] items-center justify-center px-[10vw] my-[20vh] md:my-0">
       <div className="italic uppercase flex flex-col justify-center items-end md:block">
         <span className="hidden md:block w-[15vw] align-middle animate-rotate">
           <Starburst size="15vw" />
@@ -27,7 +27,7 @@ export default function ProjectsSection() {
         </div>
       </div>
 
-      <div className="w-[70vw] flex justify-center">
+      <div className="w-[70vw] md:w-[30vw] md:mr-[10vw] flex justify-center">
         <Link href="/projects" className="inline-block mt-6 hover:scale-110 animate-bounce">
           <span className="border border-black bg-teal-300 text-xl font-semibold rounded-[50%] px-8 py-4 text-black transition">
             📁 View More !

@@ -43,7 +43,7 @@ export default function IntroSection({ ballpitDuration }: IntroSectionProps) {
       <div className="w-full md:w-[max-content] min-h-screen px-6 relative flex py-[50px] sm:py-[100px] md:py-0">
         <div>
           <div
-            className={`${mounted ? 'animate-fadeInUp' : ''} md:w-[100vw] md:pt-20 whitespace-pre-line opacity-0 text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(10vw,10vw,22vh)]/[100%] font-light `}
+            className={`${mounted ? 'animate-fadeInUp' : ''} md:w-[100vw] md:pt-10 whitespace-pre-line opacity-0 text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(10vw,10vw,22vh)]/[100%] font-light `}
           >
             <span className="font-dealva italic">Jenna Lee,</span>
             <br />
@@ -80,15 +80,13 @@ export default function IntroSection({ ballpitDuration }: IntroSectionProps) {
 
       {/* page 2 */}
       <div ref={page2Ref} className="h-screen px-2 relative flex flex-col justify-between">
-        {showBallpit && <BallpitEffect duration={ballpitDuration} />}
-
         {/* desc */}
         <div className="text-md md:text-2xl pt-[9vh] px-2 mb-4 animate-fadeInUp whitespace-pre-line">
           {t('desc')}
         </div>
 
         {/* main */}
-        <div className="w-full text-wrap pl-[1vw] flex-1">
+        <div className="w-full md:w-[100vw] text-wrap pl-[1vw] flex-1">
           <div className="text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(9vw,9vw,22vh)]/[95%] font-light">
             <span className="italic ">Msc Computer Science</span>
             <br />

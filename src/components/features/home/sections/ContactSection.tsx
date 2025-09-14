@@ -43,10 +43,7 @@ export default function ContactSection() {
           </div>
 
           {/* title */}
-          <div className="w-full text-[18vw]/[110%] md:text-9xl">
-            Contact <br />
-            Me!
-          </div>
+          <div className="w-full text-[18vw]/[110%] md:text-9xl">Contact Me!</div>
         </div>
 
         {/* Email with copy button */}
