@@ -6,7 +6,6 @@ import { ProjectCardSimple } from '@/components/features/projects/ProjectCardSim
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 
 interface ProjectCarouselProps {
-  showArrows?: boolean
   /** 캐러셀 영역에 들어오면 카드 수만큼(정확히 1바퀴) 회전시키고, 이후 스크롤을 원래대로 돌려줌 */
   oneTurnThenRelease?: boolean
 }
@@ -17,10 +16,7 @@ const RADIUS = 400
 const SCROLL_DEBOUNCE_DELAY = 300
 const ROTATION_PER_CARD = 360 / TOTAL_CARDS
 
-export function ProjectCarousel({
-  showArrows = true,
-  oneTurnThenRelease = false,
-}: ProjectCarouselProps) {
+export function ProjectCarousel({ oneTurnThenRelease = false }: ProjectCarouselProps) {
   const carouselRef = useRef<HTMLDivElement>(null)
   const [currentRotation, setCurrentRotation] = useState(0)
 
@@ -128,24 +124,22 @@ export function ProjectCarousel({
 
   return (
     <div className="relative w-full">
-      {showArrows && !lockActive && (
-        <>
-          <button
-            className="absolute top-1/2 left-16 md:left-10 z-20 -translate-y-1/2 -translate-x-full cursor-pointer pr-8"
-            onClick={() => handleArrowClick(1)}
-            aria-label="previous"
-          >
-            <MdKeyboardArrowLeft className="text-6xl" />
-          </button>
-          <button
-            className="absolute top-1/2 right-16 md:right-10 z-20 -translate-y-1/2 translate-x-full cursor-pointer pl-8"
-            onClick={() => handleArrowClick(-1)}
-            aria-label="next"
-          >
-            <MdKeyboardArrowRight className="text-6xl" />
-          </button>
-        </>
-      )}
+      <>
+        <button
+          className="absolute top-1/2 left-16 md:left-10 z-20 -translate-y-1/2 -translate-x-full cursor-pointer pr-8"
+          onClick={() => handleArrowClick(1)}
+          aria-label="previous"
+        >
+          <MdKeyboardArrowLeft className="text-6xl" />
+        </button>
+        <button
+          className="absolute top-1/2 right-16 md:right-10 z-20 -translate-y-1/2 translate-x-full cursor-pointer pl-8"
+          onClick={() => handleArrowClick(-1)}
+          aria-label="next"
+        >
+          <MdKeyboardArrowRight className="text-6xl" />
+        </button>
+      </>
 
       <div
         ref={carouselRef}

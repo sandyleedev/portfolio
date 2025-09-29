@@ -45,7 +45,7 @@ export default function IntroSection({ ballpitDuration }: IntroSectionProps) {
           <div
             className={`${mounted ? 'animate-fadeInUp' : ''} md:w-[100vw] md:pt-10 whitespace-pre-line opacity-0 text-[clamp(15vw,15vw,15vh)]/[100%] md:text-[clamp(10vw,10vw,22vh)]/[100%] font-light `}
           >
-            <span className="font-dealva italic">Jenna Lee,</span>
+            <span className="font-dealva italic">Sandy Lee,</span>
             <br />
             <span>Full Stack Developer</span>
             <br />

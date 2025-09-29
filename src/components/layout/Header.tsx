@@ -22,38 +22,6 @@ export function Header() {
 
   return (
     <header>
-      {/* Vertical Menu */}
-      {/*<div className="fixed bottom-1/2 translate-y-50 left-10 flex-col gap-4 hidden lg:flex">*/}
-      {/*  {navItems.map(({ label, href, icon }) => (*/}
-      {/*    <TooltipProvider key={label}>*/}
-      {/*      <Tooltip>*/}
-      {/*        <Link*/}
-      {/*          key={href}*/}
-      {/*          href={href}*/}
-      {/*          aria-label={label}*/}
-      {/*          title={label}*/}
-      {/*          className="rounded-xl p-2 transition transform hover:scale-110"*/}
-      {/*        >*/}
-      {/*          <TooltipTrigger asChild>*/}
-      {/*            <Image src={icon} alt={label} width={64} height={64} />*/}
-      {/*          </TooltipTrigger>*/}
-      {/*        </Link>*/}
-
-      {/*        <TooltipContent*/}
-      {/*          className="bg-zinc-50 fill-zinc-50 text-black border ml-3"*/}
-      {/*          side="right"*/}
-      {/*        >*/}
-      {/*          {label}*/}
-      {/*        </TooltipContent>*/}
-      {/*      </Tooltip>*/}
-      {/*    </TooltipProvider>*/}
-      {/*  ))}*/}
-      {/*</div>*/}
-      {/*<div className={'w-screen flex justify-end hidden lg:flex px-4 pt-4'}>*/}
-      {/*  <LanguageSwitcher />*/}
-      {/*</div>*/}
-
-      {/* Mobile Hamburger */}
       <div className="w-6 h-6 fixed z-50 top-4 right-4">
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
@@ -74,8 +42,8 @@ export function Header() {
                   className="flex items-center justify-center gap-10 h-[8vh]"
                   onClick={() => setOpen(false)}
                 >
-                  <Image src={icon} alt={label} width={50} height={50} />
-                  <div className="pr-2 text-5xl">{label}</div>
+                  <img src={icon} alt={label} className="w-[40px] sm:w-[50px]"/>
+                  <div className="pr-2 text-3xl sm:text-4xl">{label}</div>
                 </Link>
               ))}
             </nav>

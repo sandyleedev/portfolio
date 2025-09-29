@@ -19,11 +19,11 @@ export default function ProjectsSection() {
 
       <div className="w-full md:w-[70vw]">
         <div className="hidden md:block">
-          <ProjectCarousel showArrows={true} oneTurnThenRelease={true} />
+          <ProjectCarousel oneTurnThenRelease={true} />
         </div>
 
         <div className="md:hidden">
-          <ProjectCarousel showArrows={true} oneTurnThenRelease={false} />
+          <ProjectCarousel oneTurnThenRelease={false} />
         </div>
       </div>
 

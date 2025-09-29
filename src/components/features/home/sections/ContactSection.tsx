@@ -5,7 +5,7 @@ import GithubIcon from '@/components/icons/GithubIcon'
 import LinkedInIcon from '@/components/icons/LinkedInIcon'
 
 export default function ContactSection() {
-  const email = 'jennaleework@gmail.com'
+  const email = 'sandyleedev@gmail.com'
   const githubUrl = 'https://github.com/butter-cloud'
   const instagramUrl = 'https://www.instagram.com/dltmdwl'
   const linkedinUrl = 'https://www.linkedin.com/in/seungji-lee-0a365a257/'

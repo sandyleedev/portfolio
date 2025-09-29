@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import FESkillSet from '@/components/features/skills/FESkillSet'
 import BESkillSet from '@/components/features/skills/BESkillSet'
 import CloudSkillSet from '@/components/features/skills/CloudSkillSet'
@@ -11,7 +10,7 @@ export default function Skills() {
   return (
     <div className="px-6 py-12 max-w-6xl mx-auto">
       <Link href="/">
-        <Image src={'/icons/apple.png'} width={100} height={100} alt={'apple'} className="my-4" />
+        <img src={'/icons/apple.png'} width={100} height={100} alt={'apple'} className="my-4" />
       </Link>
       <h1 className="text-6xl font-bold mb-12">Skills</h1>
 

@@ -1,2 +1,5 @@
 export const cvDownloadUrl = '/docs/CV_SEUNGJILEE.pdf'
 export const cvFileName = 'CV_SEUNGJILEE.pdf'
+export const githubUrl = 'https://github.com/sandyleedev'
+export const linkedInUrl = 'https://www.linkedin.com/in/seungjilee/'
+export const email = 'sandyleedev@gmail.com'

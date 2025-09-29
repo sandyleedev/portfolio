@@ -2,9 +2,11 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import { cn } from '@/lib/utils'
-import { Header } from '@/components/Header'
+import { Header } from '@/components/layout/Header'
 import '@/app/globals.css'
 import localFont from 'next/font/local'
+import BottomMenu from '@/components/common/BottomMenu'
+import Footer from '@/components/layout/Footer'
 
 export const metadata = {
   title: 'Portfolio',
@@ -93,6 +95,8 @@ export default async function LocaleLayout({
         <NextIntlClientProvider>
           <Header />
           {children}
+          <BottomMenu />
+          <Footer/>
         </NextIntlClientProvider>
       </body>
     </html>
