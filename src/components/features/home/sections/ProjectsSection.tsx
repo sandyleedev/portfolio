@@ -18,13 +18,7 @@ export default function ProjectsSection() {
       </div>
 
       <div className="w-full md:w-[70vw]">
-        <div className="hidden md:block">
-          <ProjectCarousel oneTurnThenRelease={true} />
-        </div>
-
-        <div className="md:hidden">
-          <ProjectCarousel oneTurnThenRelease={false} />
-        </div>
+        <ProjectCarousel />
       </div>
 
       <div className="w-[70vw] md:w-[30vw] md:mr-[10vw] flex justify-center">
