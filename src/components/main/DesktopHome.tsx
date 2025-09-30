@@ -1,3 +1,5 @@
+'use client'
+
 import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -148,10 +150,20 @@ export default function DesktopHome() {
 
     return () => {
       window.removeEventListener('resize', onResize)
+
+      // 특정 id 트리거 제거
       ScrollTrigger.getById('horiz-1')?.kill()
       ScrollTrigger.getById('horiz-2')?.kill()
-      gsap.set(track1, { x: 0 })
-      gsap.set(track2, { x: 0 })
+
+      // 혹시 남아 있는 trigger 전부 제거
+      ScrollTrigger.getAll().forEach((t) => t.kill())
+
+      // gsap 타임라인 초기화
+      gsap.globalTimeline.clear()
+
+      // 트랙 위치 원복
+      if (track1) gsap.set(track1, { x: 0 })
+      if (track2) gsap.set(track2, { x: 0 })
     }
   }, [])
 
