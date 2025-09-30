@@ -4,6 +4,7 @@ import { projectData } from '@/data/projects'
 import { ProjectCardSimple } from '@/components/features/projects/ProjectCardSimple'
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 import { useCarousel } from '@/hooks/useCarousel'
+import { useSwipe } from '@/hooks/useSwipe'
 
 const SLUGS = projectData.map((p) => p.slug)
 const TOTAL_CARDS = SLUGS.length
@@ -11,6 +12,12 @@ const TOTAL_CARDS = SLUGS.length
 export function ProjectCarousel() {
   const { currentRotation, handleArrowClick, getCardStyle } = useCarousel({
     totalCards: TOTAL_CARDS,
+  })
+
+  const { handleTouchStart, handleTouchEnd } = useSwipe({
+    threshold: 50,
+    onSwipeLeft: () => handleArrowClick(-1),
+    onSwipeRight: () => handleArrowClick(1),
   })
 
   return (
@@ -32,7 +39,11 @@ export function ProjectCarousel() {
       </button>
 
       {/* carousel */}
-      <div className="relative w-full min-h-[110vh] md:h-screen flex justify-center items-center overflow-hidden [perspective:1500px]">
+      <div
+        className="relative w-full min-h-[110vh] md:h-screen flex justify-center items-center overflow-hidden [perspective:1500px]"
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className="absolute inset-0 [transform-style:preserve-3d] transition-transform duration-[800ms] ease-in-out"
           style={{ transform: `rotateY(${currentRotation}deg)` }}
