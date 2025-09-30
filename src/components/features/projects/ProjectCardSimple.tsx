@@ -24,7 +24,13 @@ export function ProjectCardSimple({ slug }: ProjectCardProps) {
       <div className="bg-white border border-zinc-500/50 flex w-full h-full flex-col overflow-hidden hover:shadow-lg transition-transform hover:-translate-y-[0.5vw] md:hover:-translate-y-1 cursor-pointer gap-2 p-4 rounded-lg">
         {/* 이미지 */}
         <div className="relative w-full h-[20vw] md:h-[120px] my-[2.5vw] md:my-4">
-          <Image src={project.imageUrl} alt={t(`${slug}.title`)} fill className="object-contain" />
+          <Image
+            src={project.imageUrl}
+            alt={t(`${slug}.title`)}
+            fill
+            className="object-contain"
+            loading="eager"
+          />
         </div>
 
         {/* 제목 */}
