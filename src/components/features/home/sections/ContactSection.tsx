@@ -3,12 +3,9 @@ import { useState } from 'react'
 import Link from 'next/link'
 import GithubIcon from '@/components/icons/GithubIcon'
 import LinkedInIcon from '@/components/icons/LinkedInIcon'
+import { email, githubUrl, instagramUrl, linkedInUrl } from '@/constants/common'
 
 export default function ContactSection() {
-  const email = 'sandyleedev@gmail.com'
-  const githubUrl = 'https://github.com/butter-cloud'
-  const instagramUrl = 'https://www.instagram.com/dltmdwl'
-  const linkedinUrl = 'https://www.linkedin.com/in/seungji-lee-0a365a257/'
   const [copied, setCopied] = useState(false)
 
   const copy = async () => {
@@ -27,9 +24,10 @@ export default function ContactSection() {
       setTimeout(() => setCopied(false), 2000)
     }
   }
+
   return (
     <>
-      <div className="flex flex-col items-center gap-15 md:block w-screen h-screen md:px-10 pt-15">
+      <div className="flex flex-col items-center gap-15 md:block w-screen min-h-screen md:px-10 pt-15">
         <div className="w-full px-[10vw] md:px-0">
           {/* mail icon */}
           <div className="w-full">
@@ -77,7 +75,7 @@ export default function ContactSection() {
             </div>
           </Link>
 
-          <Link href={linkedinUrl} target="_blank">
+          <Link href={linkedInUrl} target="_blank">
             <div className="text-3xl border border-black rounded-full px-4 py-1 cursor-pointer flex justify-center items-center gap-2 w-[62px] md:w-auto h-[45px] md:h-auto">
               <span className="md:hidden">
                 <LinkedInIcon size="32px" />

@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import DesktopMain from '@/components/main/DesktopHome'
-import MobileMain from '@/components/main/MobileHome'
+import MobileHome from '@/components/main/MobileHome'
+import DesktopHome from '@/components/main/DesktopHome'
 
 export default function HomePage() {
   const [isMobile, setIsMobile] = useState<boolean | null>(null)
@@ -17,5 +17,5 @@ export default function HomePage() {
   // prevent hydration mismatch
   if (isMobile === null) return null
 
-  return isMobile ? <MobileMain /> : <DesktopMain />
+  return isMobile ? <MobileHome /> : <DesktopHome />
 }
