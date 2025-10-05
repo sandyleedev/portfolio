@@ -22,7 +22,12 @@ export default function ProjectDetail() {
   const project = projectData.find((p) => p.slug === slug)
   const features = t.raw(`${slug}.features`) as string[]
   const role = t.raw(`${slug}.role`) as string[]
-  const contributions = (t.raw(`${slug}.contributions`) as string[]) ?? null
+  const contributions = t.has(`${slug}.contributions`)
+    ? (t.raw(`${slug}.contributions`) as string[])
+    : null
+  const troubleshooting = t.has(`${slug}.troubleshooting`)
+    ? (t.raw(`${slug}.troubleshooting`) as string[])
+    : null
 
   if (!project) {
     return <div>Project not found</div>
@@ -116,6 +121,20 @@ export default function ProjectDetail() {
               <li key={`contribution-${i}`} className="whitespace-pre-line">
                 {c}
               </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* troubleshooting */}
+      {troubleshooting && troubleshooting.length > 0 && (
+        <div>
+          <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+            Troubleshooting
+          </ButtonText>
+          <ul className="list-disc list-inside pl-5 space-y-2 p-2">
+            {(t.raw(`${slug}.troubleshooting`) as string[]).map((issue, i) => (
+              <li key={`issue-${i}`}>{issue}</li>
             ))}
           </ul>
         </div>

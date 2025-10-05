@@ -150,6 +150,39 @@
         "Built leave application/status/remaining balance views",
         "Developed user settings pages (password, delegate, e-signature, notifications)"
       ]
+    },
+    "wishlist": {
+      "title": "Wishlist Collage Web App",
+      "desc": "A simple yet creative web application that allows users to add images and links of desired items, automatically remove their backgrounds, and generate a clean collage-style wishlist. Built with a FastAPI backend and React (Next.js) frontend, fully deployed using AWS (EC2, RDS, S3, CloudFront) and Vercel.",
+      "features": [
+        "Add desired items with images and links",
+        "Automatic background removal using Python `rembg` library",
+        "Upload and store processed images on AWS S3",
+        "Store and manage item metadata in AWS RDS (PostgreSQL)",
+        "View wishlist images through CloudFront for optimized delivery",
+        "Responsive design for both PC and mobile"
+      ],
+      "role": [
+        "Backend Development: Built and deployed a FastAPI backend server on AWS EC2 using Docker",
+        "Database Design: Configured AWS RDS (PostgreSQL) to store item data and image metadata",
+        "Frontend Development: Developed responsive web UI with React (Next.js)",
+        "Cloud Integration: Configured AWS S3, CloudFront, and RDS for seamless backend integration",
+        "DevOps: Managed EC2 instance setup, Docker containerization, and Vercel deployment"
+      ],
+      "contributions": [
+        "Developed Python backend server using FastAPI for image background removal, metadata handling, and S3 integration",
+        "Integrated `rembg` for background removal and optimized image size processing to improve EC2 memory efficiency",
+        "Designed and implemented PostgreSQL schema in AWS RDS to manage wishlist items and image references",
+        "Implemented S3 upload logic and CloudFront-based retrieval for fast image delivery",
+        "Designed frontend wishlist interface and collage layout using Next.js",
+        "Set up Dockerized backend deployment on EC2 and configured CORS / proxy settings for stable API communication",
+        "Performed responsive UI testing on desktop and mobile devices"
+      ],
+      "troubleshooting": [
+        "Fixed Out-of-Memory errors on EC2 caused by large image processing — optimized `rembg` usage and upgraded EC2 memory to 2GB",
+        "Resolved mixed-content API errors (HTTPS frontend / HTTP backend) by configuring Next.js API proxy for secure communication",
+        "Handled database connection pooling for AWS RDS to ensure stable performance under concurrent requests"
+      ]
     }
   }
 }
