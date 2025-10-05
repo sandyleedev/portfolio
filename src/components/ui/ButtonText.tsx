@@ -3,6 +3,7 @@ interface ButtonTextProps {
   bgColorStyle?: string
   textColorStyle?: string
   className?: string
+  onClick?: () => void
 }
 
 export default function ButtonText({

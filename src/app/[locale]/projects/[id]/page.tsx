@@ -9,14 +9,14 @@ import { Button } from '@/components/ui/button'
 import ProjectTypeTag from '@/components/features/projects/ProjectTypeTag'
 import ButtonText from '@/components/ui/ButtonText'
 import { Menu } from 'lucide-react'
-import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Pagination } from 'swiper/modules'
+import React, { useState } from 'react'
 import ProjectMediaCarousel from '@/components/features/projects/ProjectMediaCarousel'
+import Lightbox from 'yet-another-react-lightbox'
+import Zoom from 'yet-another-react-lightbox/plugins/zoom'
 
 export default function ProjectDetail() {
   const params = useParams()
-  const slug = params.id as string // 'wishlist' 같은 slug
+  const slug = params.id as string
 
   const t = useTranslations('projects')
   const project = projectData.find((p) => p.slug === slug)
@@ -29,15 +29,16 @@ export default function ProjectDetail() {
     ? (t.raw(`${slug}.troubleshooting`) as string[])
     : null
 
-  if (!project) {
-    return <div>Project not found</div>
-  }
+  const [openArchitecture, setOpenArchitecture] = useState(false)
+
+  if (!project) return <div>Project not found</div>
 
   return (
     <div className="px-6 py-12 max-w-6xl mx-auto mb-10">
       <Button asChild variant="outline" className="rounded-full">
         <Link href="/projects">◀ BACK TO PROJECT LIST</Link>
       </Button>
+
       <Image src={project.imageUrl} width={100} height={100} alt={slug} className="my-6" />
 
       {/* title */}
@@ -54,10 +55,7 @@ export default function ProjectDetail() {
 
       {/* tag */}
       <div className="mt-4 flex gap-2 flex-wrap items-center">
-        {/* project type tag */}
         <ProjectTypeTag type={project.type} />
-
-        {/* tech stack tags */}
         {project.stacks.map((stack) => (
           <span key={stack} className="px-2 py-1 bg-gray-200 text-sm rounded">
             {stack}
@@ -65,30 +63,43 @@ export default function ProjectDetail() {
         ))}
       </div>
 
-      {/*  media carousel */}
+      {/* media carousel */}
       {project.mediaUrl?.length ? (
         <div className="mt-15">
           <ProjectMediaCarousel title={t(`${slug}.title`)} images={project.mediaUrl} />
         </div>
       ) : null}
 
-      {/* architecture  */}
+      {/* architecture */}
       {project.architectureUrl && (
-        <div>
-          <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+        <div className="mt-8">
+          <ButtonText
+            textColorStyle="text-white"
+            bgColorStyle="bg-neutral-700"
+            onClick={() => setOpenArchitecture(true)}
+          >
             System Architecture
           </ButtonText>
+
           <img
             src={project.architectureUrl}
-            alt={'architecture_diagram'}
-            className="width-[50vw] mt-2 border"
+            alt="architecture_diagram"
+            className="w-[100vw] mt-2 border cursor-zoom-in hover:opacity-90 transition"
+            onClick={() => setOpenArchitecture(true)}
+          />
+
+          <Lightbox
+            open={openArchitecture}
+            close={() => setOpenArchitecture(false)}
+            slides={[{ src: project.architectureUrl }]}
+            plugins={[Zoom]}
           />
         </div>
       )}
 
       {/* features */}
       <div>
-        <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+        <ButtonText textColorStyle="text-white" bgColorStyle="bg-neutral-700">
           Features
         </ButtonText>
         <ul className="list-disc list-inside pl-5 space-y-2 p-2">
@@ -100,7 +111,7 @@ export default function ProjectDetail() {
 
       {/* role */}
       <div>
-        <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+        <ButtonText textColorStyle="text-white" bgColorStyle="bg-neutral-700">
           Role
         </ButtonText>
         <ul className="list-disc list-inside pl-5 space-y-2 p-2">
@@ -113,7 +124,7 @@ export default function ProjectDetail() {
       {/* contributions */}
       {contributions && contributions.length > 0 && (
         <div>
-          <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+          <ButtonText textColorStyle="text-white" bgColorStyle="bg-neutral-700">
             Contributions
           </ButtonText>
           <ul className="list-disc list-inside pl-5 space-y-2 p-2">
@@ -129,7 +140,7 @@ export default function ProjectDetail() {
       {/* troubleshooting */}
       {troubleshooting && troubleshooting.length > 0 && (
         <div>
-          <ButtonText textColorStyle={'text-white'} bgColorStyle={'bg-neutral-700'}>
+          <ButtonText textColorStyle="text-white" bgColorStyle="bg-neutral-700">
             Troubleshooting
           </ButtonText>
           <ul className="list-disc list-inside pl-5 space-y-2 p-2">
@@ -141,7 +152,7 @@ export default function ProjectDetail() {
       )}
 
       {/* footer */}
-      <div className={'flex w-[100%] justify-center mt-20'}>
+      <div className="flex w-full justify-center mt-20">
         <Button asChild variant="outline" className="rounded-full font-semibold">
           <Link href="/projects">
             <Menu className="w-6 h-6" />
