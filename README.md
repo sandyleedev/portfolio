@@ -53,7 +53,7 @@ Deployed on **Vercel** with a **custom domain** connection.
 ## 🚀 Deployment
 
 The site is live and accessible at:  
-🔗 **[https://your-domain.com](https://your-domain.com)**
+🔗 **[https://sandylee.work](https://sandylee.work)**
 
 ---
 
