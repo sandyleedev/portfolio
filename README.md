@@ -5,11 +5,12 @@ Deployed on **Vercel** with a **custom domain** connection.
 
 ---
 
-## ✨ Features
+## 💥 Features
 
-- ⚡ **Smooth horizontal scrolling** and **section-based animations** using GSAP + ScrollTrigger  
-- 🌍 **Multi-language support (KR/EN)** implemented with `next-i18next`  
-- 🎨 **Tailwind CSS** and **shadcn/ui** for clean, responsive, and cohesive styling  
+- ✳️ **Smooth horizontal scrolling** and **section-based animations** using GSAP + ScrollTrigger  
+- 🌐 **Multi-language support (KR/EN)** implemented with `next-i18next`
+- 🌳 **Fully responsive design** optimized for desktop and mobile devices  
+- 🧤 **Tailwind CSS** and **shadcn/ui** for clean, responsive, and cohesive styling  
 - ☁️ **System architecture** diagrams included in project details (reflecting my interest in cloud systems)  
 - 📁 **Project pages** include:
   - Tech stack overview  
@@ -21,7 +22,7 @@ Deployed on **Vercel** with a **custom domain** connection.
 
 ---
 
-## 🧭 Menu Structure
+## 📦 Menu Structure
 
 - **Home** – Introduction & navigation  
 - **About** – Personal background & Certificates  
@@ -57,9 +58,61 @@ The site is live and accessible at:
 
 ---
 
-## 📸 Preview
+## 🖥️ Desktop Preview
+<!-- 🖥️ Desktop Preview -->
+<table>
+  <tr>
+    <td style="border: 1px solid #ccc;">
+      <img src="https://github.com/user-attachments/assets/f32604dd-b6d1-41c4-b719-0551b64cfcd8" width="700">
+    </td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td style="border: 1px solid #ccc;">
+      <img src="https://github.com/user-attachments/assets/e70ab6d6-ef79-49cd-818c-1d6d7fac4d06" width="700">
+    </td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td style="border: 1px solid #ccc;">
+      <img src="https://github.com/user-attachments/assets/112a9d1c-44f0-4d7b-8e24-6fb8f3d87bcf" width="700">
+    </td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td style="border: 1px solid #ccc;">
+      <img src="https://github.com/user-attachments/assets/f8d6ba51-4eb0-485c-85f0-ac120f4aa96b" width="700">
+    </td>
+  </tr>
+</table>
 
-_
+<br/>
+
+## 📱 Mobile Screens
+<!-- 📱 Mobile Screens -->
+<table>
+  <tr>
+    <td style="border: 1px solid #ccc;">
+      <img src="https://github.com/user-attachments/assets/20fe886e-3b77-4ba6-82c8-e6b64333efe4" width="200">
+    </td>
+    <td width="10"></td>
+    <td style="border: 1px solid #ccc;">
+      <img src="https://github.com/user-attachments/assets/b5bcadf7-a4be-4ed8-862a-4ad89697bf87" width="200">
+    </td>
+    <td width="10"></td>
+    <td style="border: 1px solid #ccc;">
+      <img src="https://github.com/user-attachments/assets/241aa0cc-1e69-4e56-9064-4634e4633b49" width="200">
+    </td>
+    <td width="10"></td>
+    <td style="border: 1px solid #ccc;">
+      <img src="https://github.com/user-attachments/assets/d8b4a4d2-0dc4-465c-88c3-28aff609a696" width="200">
+    </td>
+  </tr>
+</table>
+
 
 ---
 
